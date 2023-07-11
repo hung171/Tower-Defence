@@ -1,10 +1,11 @@
 #include "SpriteAnimation.h"
 #include "TextureManager.h"
-SpriteAnimation::SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow, int frameCount, int numAction, float frameTime) : BaseObject(texture)
+SpriteAnimation::SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow,int end, int frameCount, int numAction, float frameTime) : BaseObject(texture)
 {
 	m_spriteRow = spriteRow;
 	m_frameCount = frameCount;
 	m_numAction = numAction;
+	m_end = end;
 	//m_animSpeed = animSpeed;
 	m_frameTime = frameTime;
 	//m_flip = flip;
@@ -27,15 +28,18 @@ void SpriteAnimation::Draw(SDL_Renderer* renderer)
 {
 	if (m_pTexture != nullptr)
 	{
-		m_pTexture->RenderFrame(m_position.x, m_position.y, m_iWidth, m_iHeight, m_spriteRow, m_currentFrame, m_frameCount, m_numAction, m_angle, m_flip);
+		m_pTexture->RenderFrame(m_position.x, m_position.y, m_iWidth, m_iHeight, m_spriteRow, m_end, m_currentFrame, m_frameCount, m_numAction, m_angle, m_flip);
 	}
 }
 
 void SpriteAnimation::Update(float deltatime)
 {
 	m_currentTicks += deltatime;
-		if(m_currentTicks  >= m_frameTime) {
+		if (m_currentTicks  >= m_frameTime) {
 		m_currentFrame++;
+		if (m_currentFrame >= m_end) {
+			m_currentFrame = 0;
+		}
 		if (m_currentFrame >= m_frameCount) {
 			m_currentFrame = 0;
 		}

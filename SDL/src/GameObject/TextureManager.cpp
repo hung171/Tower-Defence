@@ -90,7 +90,7 @@ void TextureManager::Render(int x, int y, int width, int height, double angle, S
 	SDL_RenderCopyEx(Renderer::GetInstance()->GetRenderer(), m_Texture, NULL, &dstRect, angle, nullptr, flip);
 }
 
-void TextureManager::RenderFrame(int x, int y, int width, int height, int row, int currentframe, int framecount, int numAction, double angle, SDL_RendererFlip flip)
+void TextureManager::RenderFrame(int x, int y, int width, int height, int row, int end, int currentframe, int framecount, int numAction, double angle, SDL_RendererFlip flip)
 {
 	float srcWidth = originWidth/ framecount;
 	float srcHeight = originHeight/numAction;

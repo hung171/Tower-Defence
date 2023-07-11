@@ -8,6 +8,7 @@ protected:
 	int			m_iHeight;
 	int			m_iWidth;
 	float			m_numFrames;
+	int			m_end;
 	int			m_currentFrame;
 	float		m_frameTime;
 	float		m_currentTime;
@@ -20,7 +21,7 @@ protected:
 	//SDL_RendererFlip m_flip;
 	//std::shared_ptr<TextureManager> m_texture;
 public:
-	SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow, int frameCount, int numAction, float  frameTime);
+	SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float  frameTime);
 	~SpriteAnimation();
 
 	void		Init() override;

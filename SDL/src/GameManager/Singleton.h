@@ -35,3 +35,4 @@ private:
 
 template <class T> std::shared_ptr<T> CSingleton<T>::s_instance = nullptr;
 
+

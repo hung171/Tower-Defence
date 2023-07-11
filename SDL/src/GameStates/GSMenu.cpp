@@ -15,7 +15,7 @@ GSMenu::~GSMenu()
 void GSMenu::Init()
 {
 	//auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu.tga");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("background3.png");
 
 	// background
 	//auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -28,7 +28,7 @@ void GSMenu::Init()
 	std::shared_ptr<MouseButton> btnPlay = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	
 	btnPlay->SetSize(150, 150);
-	btnPlay->Set2DPosition((SCREEN_WIDTH - btnPlay->GetWidth())/2, (SCREEN_HEIDHT - btnPlay->GetHeight()) / 2);
+	btnPlay->Set2DPosition((SCREEN_WIDTH - btnPlay->GetWidth())/(3.33), (SCREEN_HEIDHT - btnPlay->GetHeight()) / 3);
 	btnPlay->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_PLAY);
 		});
@@ -39,7 +39,7 @@ void GSMenu::Init()
 	std::shared_ptr<MouseButton> btnClose = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	//btnClose = std::make_shared<MouseButton>(texture);
 	btnClose->SetSize(50, 50);
-	btnClose->Set2DPosition(SCREEN_WIDTH - btnClose->GetWidth(), 10);
+	btnClose->Set2DPosition(SCREEN_WIDTH - btnClose->GetWidth() - 10, 10);
 	btnClose->SetOnClick([]() {
 		exit(0);
 		});
@@ -49,21 +49,33 @@ void GSMenu::Init()
 	texture = ResourceManagers::GetInstance()->GetTexture("btn_settings.tga");
 	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnOption->SetSize(100, 100);
-	btnOption->Set2DPosition((SCREEN_WIDTH - btnOption->GetWidth()) / 2, SCREEN_HEIDHT / 2 + 170);
+	btnOption->Set2DPosition((SCREEN_WIDTH - btnOption->GetWidth()) / 3.33 + 10, SCREEN_HEIDHT / 2 );
 	btnOption->SetOnClick([]() {
-		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_OPTION);
+		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
 		});
 	m_listButton.push_back(btnOption);
 
 	//CREDIT game
 	texture = ResourceManagers::GetInstance()->GetTexture("btn_help.tga");
 	btnCredit = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
-	btnCredit->Set2DPosition((SCREEN_WIDTH - btnCredit->GetWidth()) / 2, SCREEN_HEIDHT / 2 + 280);
+	btnCredit->Set2DPosition((SCREEN_WIDTH - btnCredit->GetWidth()) / 3.33 + 10, SCREEN_HEIDHT / 2 + 120);
 	btnCredit->SetSize(100, 100);
 	btnCredit->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_CREDIT);
 		});
 	m_listButton.push_back(btnCredit);
+
+	//Turn on Music
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_music.tga");
+	std::shared_ptr<MouseButton> btnMusicOn = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	btnMusicOn->Set2DPosition(SCREEN_WIDTH - btnMusicOn->GetWidth() - 20, 10);
+	btnMusicOn->SetSize(50, 50);
+	btnMusicOn->SetOnClick([]() {
+		std::shared_ptr<Sound> i;
+		i = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
+		i->PlaySound();
+		});
+	m_listButton.push_back(btnMusicOn);
 
 	// game title
 	///Set Font
@@ -71,8 +83,9 @@ void GSMenu::Init()
 	m_textGameName = std::make_shared<Text>("Data/lazy.ttf", m_textColor);
 	m_textGameName->SetSize(300, 50);
 	m_textGameName->Set2DPosition((SCREEN_WIDTH - m_textGameName->GetWidth())/2, SCREEN_HEIDHT / 2 - 300);
-	m_textGameName->LoadFromRenderText("Your Game");
-	m_Sound = std::make_shared<Sound>("Data/Sounds/Alarm01.wav");
+	m_textGameName->LoadFromRenderText("");
+	//m_Sound = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
+	m_Sound = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
 	m_Sound->PlaySound();
 }
 

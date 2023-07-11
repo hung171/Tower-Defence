@@ -31,17 +31,27 @@ void GSPlay::Init()
 	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
 	button = std::make_shared<MouseButton>( texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
-	button->Set2DPosition(SCREEN_WIDTH - 50, 10);
+	button->Set2DPosition(SCREEN_WIDTH - 60, 10);
 	button->SetOnClick([this]() {
 		GameStateMachine::GetInstance()->PopState();
 		});
 	m_listButton.push_back(button);
 
+	// settings close
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_settings.tga");
+	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	button->SetSize(50, 50);
+	button->Set2DPosition(SCREEN_WIDTH - 120, 10);
+	button->SetOnClick([this]() {
+		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_OPTION);
+		});
+	m_listButton.push_back(button);
+
    // Animation 
-	texture = ResourceManagers::GetInstance()->GetTexture("Actor1_2.tga");
-	obj = std::make_shared<SpriteAnimation>( texture, 2, 9, 6, 0.2f);
+	texture = ResourceManagers::GetInstance()->GetTexture("animation3.png");
+	obj = std::make_shared<SpriteAnimation>( texture, 2, 6, 6, 5, 0.1f);
 	obj->SetFlip(SDL_FLIP_HORIZONTAL);
-	obj->SetSize(40, 50);
+	obj->SetSize(200, 200);
 	obj->Set2DPosition(240, 400);
 	
 	//Camera::GetInstance()->SetTarget(obj);

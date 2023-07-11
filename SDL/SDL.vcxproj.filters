@@ -143,8 +143,16 @@
     <ClInclude Include="src\GameStates\GSMenu.h">
       <Filter>Source Files\GameState</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameStates\GSPlay.h">
       <Filter>Source Files\GameState</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SDL.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
