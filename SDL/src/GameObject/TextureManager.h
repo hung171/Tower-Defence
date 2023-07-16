@@ -31,7 +31,7 @@ public:
 	std::vector<SDL_Texture*> m_ListTextures;
 	//Creates image from font string
 	bool LoadFromRendererText(TTF_Font* font,  std::string& textureText, SDL_Color textColor);
-	//SDL_Texture* GetTexture();
+	SDL_Texture* GetTexture() const { return m_Texture; }
 
 };
 

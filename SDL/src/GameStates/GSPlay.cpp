@@ -1,9 +1,10 @@
-#include "GSPlay.h"
+﻿#include "GSPlay.h"
 #include "GameObject/TextureManager.h"
 #include "GameObject/Sprite2D.h"
 #include "GameObject/MouseButton.h"
 #include "GameObject/SpriteAnimation.h"
 #include "GameObject/Camera.h"
+#include "GameObject/MapManager.h"
 
 
 GSPlay::GSPlay()
@@ -26,6 +27,18 @@ void GSPlay::Init()
 	m_background = std::make_shared<Sprite2D>( texture, SDL_FLIP_NONE);
 	m_background->SetSize(SCREEN_WIDTH, SCREEN_HEIDHT);
 	m_background->Set2DPosition(0, 0);
+
+	// Tạo danh sách texture cho các file ảnh từ 1.png đến 2.png
+	std::vector<std::shared_ptr<TextureManager>> textureList;
+	for (int i = 1; i <= 2; ++i) {
+		std::string filename = std::to_string(i) + ".png";
+		std::shared_ptr<TextureManager> textureManager = ResourceManagers::GetInstance()->GetTexture(filename);
+		textureList.push_back(textureManager);
+	}
+
+	// Tạo đối tượng MapManager với các thông số đã khai báo và danh sách texture
+	std::shared_ptr<MapManager> mapManager = std::make_shared<MapManager>(1000, 1000, 100, textureList[0], SDL_FLIP_NONE);
+	mapManager->LoadFromFile("data/map.txt");
 
 	// button close
 	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
@@ -180,9 +193,11 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-//	obj->Draw(renderer);
+	//	obj->Draw(renderer);
 	for (auto it : m_listAnimation)
 	{
 		it->Draw(renderer);
 	}
+	// Vẽ Map
+	mapManager->Draw(renderer);
 }
