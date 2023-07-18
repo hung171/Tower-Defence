@@ -20,3 +20,5 @@ public:
     void LoadFromFile(const std::string& filename);
     void Draw(SDL_Renderer* renderer) override;
 };
+
+

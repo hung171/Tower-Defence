@@ -60,19 +60,38 @@ void MapManager::LoadFromFile(const std::string& filename)
 
 void MapManager::Draw(SDL_Renderer* renderer)
 {
-    for (int row = 0; row < m_height; ++row)
-    {
-        for (int col = 0; col < m_width; ++col)
-        {
-            int tileValue = m_mapData[row][col];
-            // Calculate the position to draw the tile
-            float posX = Get2DPosition().x + col * m_tileSize;
-            float posY = Get2DPosition().y + row * m_tileSize;
-            // Set the position of the Sprite2D for drawing
-            Set2DPosition(posX, posY);
+    // Kích thước của mỗi tile
+    int tileSize = 100;
 
-            // Draw the tile using the Sprite2D's Draw method
-            Sprite2D::Draw(renderer);
+    for (int y = 0; y < m_height; ++y)
+    {
+        for (int x = 0; x < m_width; ++x)
+        {
+            int tileValue = m_mapData[y][x];
+
+            if (tileValue == 1)
+            {
+                auto texture = ResourceManagers::GetInstance()->GetTexture("grass_tile_1.png");
+                if (texture != nullptr)
+                {
+                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
+                    tile->SetSize(tileSize, tileSize);
+                    tile->Set2DPosition(x * tileSize, y * tileSize);
+                    tile->Draw(renderer);
+                }
+            }
+            else if (tileValue == 0)
+            {
+                auto texture = ResourceManagers::GetInstance()->GetTexture("sand_tile.png");
+                if (texture != nullptr)
+                {
+                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
+                    tile->SetSize(tileSize, tileSize);
+                    tile->Set2DPosition(x * tileSize, y * tileSize);
+                    tile->Draw(renderer);
+                }
+            }
         }
     }
 }
+

@@ -28,17 +28,10 @@ void GSPlay::Init()
 	m_background->SetSize(SCREEN_WIDTH, SCREEN_HEIDHT);
 	m_background->Set2DPosition(0, 0);
 
-	// Tạo danh sách texture cho các file ảnh từ 1.png đến 2.png
-	std::vector<std::shared_ptr<TextureManager>> textureList;
-	for (int i = 1; i <= 2; ++i) {
-		std::string filename = std::to_string(i) + ".png";
-		std::shared_ptr<TextureManager> textureManager = ResourceManagers::GetInstance()->GetTexture(filename);
-		textureList.push_back(textureManager);
-	}
+	// Create and initialize MapManager
+	m_mapManager = std::make_shared<MapManager>(10, 10, 100, nullptr, SDL_FLIP_NONE);
+	m_mapManager->LoadFromFile("data/map.txt");
 
-	// Tạo đối tượng MapManager với các thông số đã khai báo và danh sách texture
-	std::shared_ptr<MapManager> mapManager = std::make_shared<MapManager>(1000, 1000, 100, textureList[0], SDL_FLIP_NONE);
-	mapManager->LoadFromFile("data/map.txt");
 
 	// button close
 	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
@@ -188,6 +181,7 @@ void GSPlay::Update(float deltaTime)
 void GSPlay::Draw(SDL_Renderer* renderer)
 {
 	m_background->Draw(renderer);
+
 	//m_score->Draw();
 	for (auto it : m_listButton)
 	{
@@ -198,6 +192,7 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-	// Vẽ Map
-	mapManager->Draw(renderer);
+
+	// Draw MapManager
+	m_mapManager->Draw(renderer);
 }
