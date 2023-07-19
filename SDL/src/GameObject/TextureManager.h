@@ -32,10 +32,7 @@ public:
 	std::shared_ptr<TextureManager> texture_manager;
 	//Creates image from font string
 	bool LoadFromRendererText(TTF_Font* font,  std::string& textureText, SDL_Color textColor);
-<<<<<<< HEAD
 	//SDL_Texture* GetTexture();
-=======
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
 	SDL_Texture* GetTexture() const { return m_Texture; }
 
 };

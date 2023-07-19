@@ -23,11 +23,6 @@ void GSPlay::Init()
 	m_mapManager = std::make_shared<MapManager>(21, 13, 64, nullptr, SDL_FLIP_NONE);
 	m_mapManager->LoadFromFile("C:/Users/han.glschool/source/repos/Thuan-Hung-Dung/SDL/Data/Textures/map01.txt");	
 
-	// Create and initialize MapManager
-	m_mapManager = std::make_shared<MapManager>(10, 10, 100, nullptr, SDL_FLIP_NONE);
-	m_mapManager->LoadFromFile("data/map.txt");
-
-
 	// button close
 	auto texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
@@ -180,11 +175,6 @@ void GSPlay::Update(float deltaTime)
 
 void GSPlay::Draw(SDL_Renderer* renderer)
 {
-<<<<<<< HEAD
-=======
-	m_background->Draw(renderer);
-
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
 	//m_score->Draw();
 
 	/*for (auto it : tileList)
@@ -200,21 +190,14 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-<<<<<<< HEAD
 	/*for (auto it : m_listButton_2)
 	{
 		it->Draw(renderer);
 	}*/
 	//	obj->Draw(renderer);
 		//	obj->Draw(renderer);
-=======
-	//	obj->Draw(renderer);
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
 	for (auto it : m_listAnimation)
 	{
 		it->Draw(renderer);
 	}
-
-	// Draw MapManager
-	m_mapManager->Draw(renderer);
 }

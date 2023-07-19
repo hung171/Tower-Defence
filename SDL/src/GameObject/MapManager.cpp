@@ -57,35 +57,18 @@ void MapManager::LoadFromFile(const std::string& filename)
 }
 
 
-<<<<<<< HEAD
 void MapManager::Draw(SDL_Renderer* renderer)
 {
     int tileSize = 64;
 
     for (int y = 0; y < m_height; ++y) 
-=======
-
-void MapManager::Draw(SDL_Renderer* renderer)
-{
-    // Kích thước của mỗi tile
-    int tileSize = 100;
-
-    for (int y = 0; y < m_height; ++y)
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
     {
         for (int x = 0; x < m_width; ++x)
         {
             int tileValue = m_mapData[y][x];
-<<<<<<< HEAD
             if (tileValue == 1)
             {
                 auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/1.png");
-=======
-
-            if (tileValue == 1)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("grass_tile_1.png");
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
                 if (texture != nullptr)
                 {
                     auto tile = std::make_shared<Sprite2D>(texture, m_flip);
@@ -94,15 +77,9 @@ void MapManager::Draw(SDL_Renderer* renderer)
                     tile->Draw(renderer);
                 }
             }
-<<<<<<< HEAD
             else if (tileValue == 2)
             {
                 auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/2.png");
-=======
-            else if (tileValue == 0)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("sand_tile.png");
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
                 if (texture != nullptr)
                 {
                     auto tile = std::make_shared<Sprite2D>(texture, m_flip);
@@ -111,7 +88,6 @@ void MapManager::Draw(SDL_Renderer* renderer)
                     tile->Draw(renderer);
                 }
             }
-<<<<<<< HEAD
             else if (tileValue == 3)
             {
                 auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/3.png");
@@ -260,9 +236,3 @@ void MapManager::Draw(SDL_Renderer* renderer)
 
     }
 }
-=======
-        }
-    }
-}
-
->>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
