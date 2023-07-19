@@ -67,174 +67,35 @@ void MapManager::Draw(SDL_Renderer * renderer)
         for (int x = 0; x < m_width; ++x)
         {
             int tileValue = m_mapData[y][x];
+            
+            std::map<int, std::string> tileValueToTexturePath = {
+                {1, "TileMap/1.png"},
+                {2, "TileMap/2.png"},
+                {3, "TileMap/3.png"},
+                {4, "TileMap/4.png"},
+                {5, "TileMap/5.png"},
+                {6, "TileMap/6.png"},
+                {7, "TileMap/7.png"},
+                {8, "TileMap/8.png"},
+                {9, "TileMap/9.png"},
+                {10, "TileMap/10.png"},
+                {11, "TileMap/11.png"},
+                {12, "TileMap/12.png"},
+                {13, "TileMap/13.png"},
+                {14, "TileMap/14.png"},
+                {15, "TileMap/15.png"}
+            };
 
-            if (tileValue == 1)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/1.png");
-                if (texture != nullptr)
-                {
+            auto texturePathIterator = tileValueToTexturePath.find(tileValue);
+            if (texturePathIterator != tileValueToTexturePath.end()) {
+                auto texture = ResourceManagers::GetInstance()->GetTexture(texturePathIterator->second);
+                if (texture != nullptr) {
                     auto tile = std::make_shared<Sprite2D>(texture, m_flip);
                     tile->SetSize(tileSize, tileSize);
                     tile->Set2DPosition(x * tileSize, y * tileSize);
                     tile->Draw(renderer);
                 }
             }
-            else if (tileValue == 2)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/2.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 3)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/3.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-
-            }
-            else if (tileValue == 4)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/4.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 5)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/5.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 6)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/6.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 7)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/7.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 8)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/8.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 9)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/9.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 10)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/10.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 11)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/11.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 12)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/12.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 13)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/13.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 14)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/14.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-            else if (tileValue == 15)
-            {
-                auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/15.png");
-                if (texture != nullptr)
-                {
-                    auto tile = std::make_shared<Sprite2D>(texture, m_flip);
-                    tile->SetSize(tileSize, tileSize);
-                    tile->Set2DPosition(x * tileSize, y * tileSize);
-                    tile->Draw(renderer);
-                }
-            }
-
         }
     }
 }

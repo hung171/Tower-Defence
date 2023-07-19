@@ -4,6 +4,7 @@
 class Sprite2D;
 class SpriteAnimation;
 class MapManager;
+class Enemy;
 
 class GSPlay :
 	public GameStateBase
@@ -29,11 +30,13 @@ public:
 private:
 	std::shared_ptr<Sprite2D>	m_background;
 	std::shared_ptr<MapManager> m_mapManager;
+	std::shared_ptr<Enemy> m_enemy;
 	//std::shared_ptr<Text>		m_score;
 	std::list<std::shared_ptr<MouseButton>>	m_listButton;
 	std::list<std::shared_ptr<MouseButton>>	m_listButton_2;
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
 	std::list<std::shared_ptr<SpriteAnimation>>	m_listAnimation;
+	std::list<std::shared_ptr<Enemy>>	m_listEnemy;
 	std::shared_ptr<SpriteAnimation> obj;
 	std::shared_ptr<MouseButton> button;
 	float time = 0.0f;

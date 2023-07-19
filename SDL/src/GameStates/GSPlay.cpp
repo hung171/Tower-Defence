@@ -5,6 +5,7 @@
 #include "GameObject/SpriteAnimation.h"
 #include "GameObject/Camera.h"
 #include "GameObject/MapManager.h"
+#include "GameObject/Enemy.h"
 
 
 GSPlay::GSPlay()
@@ -19,10 +20,9 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
-
+	// map
 	m_mapManager = std::make_shared<MapManager>(21, 13, 64, nullptr, SDL_FLIP_NONE);
 	m_mapManager->LoadFromFile("C:/Users/han.glschool/source/repos/Thuan-Hung-Dung/SDL/Data/Textures/map01.txt");
-
 
 	// button close
 	auto texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
@@ -47,12 +47,15 @@ void GSPlay::Init()
 	// Animation 
 	texture = ResourceManagers::GetInstance()->GetTexture("adventurer-Sheet.png");
 	obj = std::make_shared<SpriteAnimation>(texture, 8, 4, 7, 11, 0.1f);
-	obj->SetFlip(SDL_FLIP_HORIZONTAL);
+	obj->SetFlip(SDL_FLIP_NONE);
 	obj->SetSize(64, 64);
-	obj->Set2DPosition(64 * 5, 64 * 7);
+	obj->Set2DPosition(64 * 2.5, 64 * 3);
 	m_listAnimation.push_back(obj);
 
 	//Camera::GetInstance()->SetTarget(obj);
+
+	// enemy
+
 
 	m_KeyPress = 0;
 }
@@ -169,6 +172,7 @@ void GSPlay::Update(float deltaTime)
 		it->Update(deltaTime);
 	}
 
+
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);
 	//obj->Update(deltaTime);
@@ -189,6 +193,4 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-
-
 }
