@@ -10,7 +10,7 @@ Sprite2D::Sprite2D(std::shared_ptr<TextureManager> texture, SDL_RendererFlip fli
 {
 	m_flip = flip;
 	Init();
-	
+
 }
 
 void Sprite2D::Init()
@@ -18,14 +18,14 @@ void Sprite2D::Init()
 	// Init Camera
 }
 
-void Sprite2D::Draw(SDL_Renderer * renderer)
+void Sprite2D::Draw(SDL_Renderer* renderer)
 {
 	//Get2DPosition();
 	if (m_pTexture != nullptr)
 	{
 		m_pTexture->Render(m_position.x, m_position.y, m_iWidth, m_iHeight, m_angle, m_flip);
 	}
-	
+
 }
 
 void Sprite2D::Update(float deltatime)
