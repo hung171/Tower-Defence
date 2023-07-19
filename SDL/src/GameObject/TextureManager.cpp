@@ -42,8 +42,6 @@ bool TextureManager::Init()
 	return ret;
 }
 
-
-
 bool TextureManager::LoadImage(const std::string& path)
 {
 	//Load image at specified path
@@ -78,7 +76,6 @@ bool TextureManager::LoadImage(const std::string& path)
 	
 	return m_Texture != NULL;
 }
-
 
 void TextureManager::setColor(Uint8 red, Uint8 green, Uint8 blue)
 {

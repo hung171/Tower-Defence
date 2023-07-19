@@ -29,7 +29,7 @@ Level::Level(SDL_Renderer* renderer, int setTileCountX, int setTileCountY) :
 void Level::draw(SDL_Renderer* renderer, int tileSize) {
     //Draw the arrow (and empty) tiles.
     for (int count = 0; count < listTiles.size(); count++)
-        drawTile(renderer, (count % tileCountX), ( count / tileCountY), tileSize);
+        drawTile(renderer, (count % tileCountX), (count / tileCountY), tileSize);
 
     //Draw the target tile.
     if (textureTileTarget != nullptr) {
@@ -92,7 +92,9 @@ void Level::drawTile(SDL_Renderer* renderer, int x, int y, int tileSize) {
 
 bool Level::isTileWall(int x, int y) {
     int index = x + y * tileCountX;
-    if (index > -1 && index < listTiles.size() && x > -1 && x < tileCountX && y > -1 && y < tileCountY)
+    if (index > -1 && index < listTiles.size() &&
+        x > -1 && x < tileCountX &&
+        y > -1 && y < tileCountY)
         return listTiles[index].isWall;
 
     return false;
@@ -146,7 +148,7 @@ void Level::calculateDistances() {
     listTiles[indexTarget].flowDistance = 0;
     listIndicesToCheck.push(indexTarget);
 
-    //  
+    //The offset of the neighboring tiles to be checked.
     const int listNeighbors[][2] = { { -1, 0}, {1, 0}, {0, -1}, {0, 1} };
 
     //Loop through the queue and assign distance to each tile.

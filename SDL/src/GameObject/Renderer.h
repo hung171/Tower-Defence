@@ -22,5 +22,4 @@ private:
 	TTF_Font* gFont;
 	 int WALKING_ANIMATION_FRAMES ;
 	SDL_Rect* gSpriteClips[4];
-
 };

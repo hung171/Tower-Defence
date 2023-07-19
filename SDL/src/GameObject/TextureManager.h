@@ -17,7 +17,7 @@ public:
 	bool Init();
 	int originWidth;
 	int originHeight;
-	bool LoadImage(const std::string& path);	
+	bool LoadImage(const std::string& path);
 	//Render texture at given point
 
 	void setColor(Uint8 red, Uint8 green, Uint8 blue);
@@ -29,11 +29,9 @@ public:
 	//Set Alpha
 	void SetAlpha(Uint8 alpha);
 	std::vector<SDL_Texture*> m_ListTextures;
-	std::shared_ptr<TextureManager> texture_manager;
 	//Creates image from font string
 	bool LoadFromRendererText(TTF_Font* font,  std::string& textureText, SDL_Color textColor);
 	//SDL_Texture* GetTexture();
-	SDL_Texture* GetTexture() const { return m_Texture; }
 
 };
 

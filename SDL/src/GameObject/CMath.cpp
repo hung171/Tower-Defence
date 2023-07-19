@@ -16,17 +16,6 @@ Vector2& Vector2::Normalize()
 	return *this;
 }
 
-Vector2& Vector2::normalize_1()
-{
-	float magnitudeStored = magnitude();
-	if (magnitudeStored > 0.0f) {
-		x /= magnitudeStored;
-		y /= magnitudeStored;
-	}
-
-	return *this;
-}
-
 Vector2 Vector2::operator + (Vector2& vector)
 {
 	return Vector2(x + vector.x, y + vector.y);

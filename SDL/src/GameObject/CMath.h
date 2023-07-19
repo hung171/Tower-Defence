@@ -19,11 +19,10 @@ public:
 	Vector2(float _x, float _y) : x(_x), y(_y) {}
 	Vector2(const float* pArg) : x(pArg[0]), y(pArg[1]) {}
 	Vector2(const Vector2& vector) : x(vector.x), y(vector.y) {}
-	float magnitude() { return sqrt(x * x + y * y); }
+
 	//Vector's operations
 	float Length();
 	Vector2& Normalize();
-	Vector2& normalize_1();
 	Vector2 operator + (Vector2& vector);
 	Vector2& operator += (Vector2& vector);
 	Vector2 operator - ();
@@ -36,9 +35,6 @@ public:
 	Vector2& operator = (Vector2 vector);
 	Vector2 Modulate(Vector2& vector);
 	float Dot(Vector2& vector);
-	float dot_1(const Vector2& other) { return x * other.x + y * other.y; }
-	float cross(const Vector2& other) { return x * other.y - y * other.x; }
-	float angleBetween(const Vector2& other) { return atan2(cross(other), dot_1(other)); }
 
 	//access to elements
 	float operator [] (unsigned int idx);
