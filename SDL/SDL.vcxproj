@@ -169,7 +169,10 @@
     <ClCompile Include="src\GameObject\Camera.cpp" />
     <ClCompile Include="src\GameObject\CMath.cpp" />
     <ClCompile Include="src\GameObject\Dot.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="src\GameObject\Level.cpp" />
+=======
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
     <ClCompile Include="src\GameObject\MapManager.cpp" />
     <ClCompile Include="src\GameObject\MouseButton.cpp" />
     <ClCompile Include="src\GameObject\Renderer.cpp" />
@@ -197,7 +200,10 @@
     <ClInclude Include="src\GameObject\CMath.h" />
     <ClInclude Include="src\GameObject\Define.h" />
     <ClInclude Include="src\GameObject\Dot.h" />
+<<<<<<< HEAD
     <ClInclude Include="src\GameObject\Level.h" />
+=======
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
     <ClInclude Include="src\GameObject\MapManager.h" />
     <ClInclude Include="src\GameObject\MouseButton.h" />
     <ClInclude Include="src\GameObject\Renderer.h" />

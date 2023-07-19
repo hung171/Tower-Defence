@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include"BaseObject.h"
 
 class Sprite2D : public BaseObject
@@ -7,7 +7,10 @@ protected:
 	int m_iWidth;
 	int m_iHeight;
 	SDL_RendererFlip m_flip;
+<<<<<<< HEAD
 
+=======
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
 	SDL_Texture* m_texture;
 	int m_textureIndex;
 public:
@@ -23,7 +26,12 @@ public:
 	int GetHeight();
 	void SetRotation(double angle);
 	void SetFlip(SDL_RendererFlip flip);
+<<<<<<< HEAD
 
 
 
 };
+=======
+};
+
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c

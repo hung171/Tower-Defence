@@ -19,4 +19,10 @@ public:
     int GetTile(int row, int col);
     void LoadFromFile(const std::string& filename);
     void Draw(SDL_Renderer* renderer) override;
+<<<<<<< HEAD
 };
+=======
+};
+
+
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c

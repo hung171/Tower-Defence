@@ -28,6 +28,10 @@ public:
 
 private:
 	std::shared_ptr<Sprite2D>	m_background;
+<<<<<<< HEAD
+=======
+	std::list<std::shared_ptr<Sprite2D>> m_listbg;
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
 	std::shared_ptr<MapManager> m_mapManager;
 	//std::shared_ptr<Text>		m_score;
 	std::list<std::shared_ptr<MouseButton>>	m_listButton;

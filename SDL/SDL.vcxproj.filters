@@ -81,12 +81,15 @@
     <ClCompile Include="src\GameStates\GSPlay.cpp">
       <Filter>Source Files\GameState</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="src\GameStates\GSCredit.cpp">
       <Filter>Source Files\GameState</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObject\Level.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
+=======
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
     <ClCompile Include="src\GameObject\MapManager.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
@@ -158,12 +161,15 @@
     <ClInclude Include="src\GameStates\GSPlay.h">
       <Filter>Source Files\GameState</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="src\GameStates\GSCredit.h">
       <Filter>Source Files\GameState</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObject\Level.h">
       <Filter>Source Files\GameObjects</Filter>
     </ClInclude>
+=======
+>>>>>>> b82266d5f9b525c3e903efa92bf737af9639c22c
     <ClInclude Include="src\GameObject\MapManager.h">
       <Filter>Source Files\GameObjects</Filter>
     </ClInclude>

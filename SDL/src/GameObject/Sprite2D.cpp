@@ -1,4 +1,4 @@
-#include "Sprite2D.h"
+﻿#include "Sprite2D.h"
 #include "TextureManager.h"
 //Sprite2D::Sprite2D()
 //{
@@ -68,4 +68,5 @@ void Sprite2D::SetFlip(SDL_RendererFlip flip)
 {
 	m_flip = flip;
 }
+
 
