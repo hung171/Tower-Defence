@@ -29,7 +29,7 @@ private:
 	std::list<std::shared_ptr<MouseButton>>	m_listButton;
 	std::shared_ptr<Text>					m_textGameName;
 	SDL_Color m_textColor;
-	TTF_Font*  m_Font;
+	TTF_Font* m_Font;
 	std::shared_ptr<Sound>					m_Sound;
 	std::shared_ptr<MouseButton> btnCredit;
 	int score = 0;
