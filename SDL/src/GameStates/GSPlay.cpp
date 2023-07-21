@@ -170,6 +170,7 @@ void GSPlay::Update(float deltaTime)
 			//it->MoveLeft(deltaTime);
 		}
 		it->Update(deltaTime);
+		it->Move(0.1f);
 	}
 
 

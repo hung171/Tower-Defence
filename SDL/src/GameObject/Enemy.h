@@ -13,5 +13,4 @@ public:
 	virtual void Draw(SDL_Renderer* renderer) override;
 	virtual void Update(float deltaTime) override;
 
-	// Khai báo thêm các phương thức và biến riêng cho Enemy
 };

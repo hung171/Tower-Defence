@@ -1,5 +1,7 @@
 ﻿#include "SpriteAnimation.h"
 #include "TextureManager.h"
+#include "CMath.h"
+
 SpriteAnimation::SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow,int end, int frameCount, int numAction, float frameTime) : BaseObject(texture)
 {
 	m_spriteRow = spriteRow;
@@ -91,6 +93,62 @@ void SpriteAnimation::MoveLeft(float deltaTime)
 
 		m_position.x += 20 * deltaTime;
 	
+}
+
+void Normalize(Vector3& v)
+{
+	float lengthSquared = v.x * v.x + v.y * v.y + v.z * v.z;
+	if (lengthSquared > 0)
+	{
+		float inverseLength = 1.0f / sqrt(lengthSquared);
+		v.x *= inverseLength;
+		v.y *= inverseLength;
+		v.z *= inverseLength;
+
+	}
+}
+
+int tileSize = 64;
+
+std::vector<Vector3> pathPoints = {
+	Vector3(150, 450, 0),
+	Vector3(100, 450, 0),
+	Vector3(100, 650, 0),
+	Vector3(350, 650, 0),
+	Vector3(350, 550, 0),
+	Vector3(600, 550, 0),
+	Vector3(600, 300, 0),
+
+};
+
+int currentPathIndex = 0;
+bool isMoving = true;
+
+void SpriteAnimation::Move(float deltaTime)
+{
+	if (isMoving && currentPathIndex < pathPoints.size())
+	{
+		Vector3 targetPoint = pathPoints[currentPathIndex];
+
+		Vector3 direction = targetPoint - m_position;
+		float distance = sqrt(direction.x * direction.x + direction.y * direction.y + direction.z * direction.z);
+
+		if (distance < 5.0f)
+		{
+			m_position = targetPoint;
+			currentPathIndex++;
+
+			if (currentPathIndex == pathPoints.size())
+			{
+				isMoving = false;
+			}
+		}
+		else
+		{
+			Normalize(direction);
+			m_position += direction * 20 * deltaTime;
+		}
+	}
 }
 
 
