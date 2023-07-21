@@ -6,6 +6,7 @@
 #include "GameObject/Camera.h"
 #include "GameObject/MapManager.h"
 #include "GameObject/Enemy.h"
+#include "GameObject/Turret.h"
 
 
 GSPlay::GSPlay()
@@ -22,10 +23,53 @@ void GSPlay::Init()
 {
 	// map
 	m_mapManager = std::make_shared<MapManager>(21, 13, 64, nullptr, SDL_FLIP_NONE);
-	m_mapManager->LoadFromFile("C:/Users/han.glschool/source/repos/Thuan-Hung-Dung/SDL/Data/Textures/map01.txt");
+	m_mapManager->LoadFromFile("Data/Textures/map01.txt");
+
+	auto texture_1 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_2 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_3 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_4 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	m_turret_1 = std::make_shared<Turret>(texture_1, SDL_FLIP_NONE);
+	m_turret_2 = std::make_shared<Turret>(texture_2, SDL_FLIP_NONE);
+	m_turret_3 = std::make_shared<Turret>(texture_3, SDL_FLIP_NONE);
+	m_turret_4 = std::make_shared<Turret>(texture_4, SDL_FLIP_NONE);
+
+
+	auto texture = ResourceManagers::GetInstance()->GetTexture("");
+	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	button->Set2DPosition(64, 64 * 6);
+	button->SetOnClick([this]() {
+		m_turret_1->Set2DPosition(64, 64 * 6);
+		});
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("");
+	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	button->Set2DPosition(64 * 7, 64 * 10);
+	button->SetOnClick([this]() {
+		m_turret_2->Set2DPosition(64 * 7, 64 * 10);
+		});
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("");
+	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	button->Set2DPosition(64 * 8, 64 * 3);
+	button->SetOnClick([this]() {
+		m_turret_3->Set2DPosition(64 * 8, 64 * 3);
+		});
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("");
+	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	button->Set2DPosition(64 * 15, 64 * 9);
+	button->SetOnClick([this]() {
+		m_turret_4->Set2DPosition(64 * 15, 64 * 9);
+		});
+	m_listButton.push_back(button);
+
 
 	// button close
-	auto texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
 	button->Set2DPosition(SCREEN_WIDTH - 60, 10);
@@ -189,6 +233,11 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
+
+	m_turret_1->Draw(renderer);
+	m_turret_2->Draw(renderer);
+	m_turret_3->Draw(renderer);
+	m_turret_4->Draw(renderer);
 	
 	for (auto it : m_listAnimation)
 	{

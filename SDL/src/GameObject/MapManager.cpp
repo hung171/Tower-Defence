@@ -1,11 +1,12 @@
 ﻿#include "MapManager.h"
+#include "Turret.h"
 #include "ResourceManagers.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 
 MapManager::MapManager(int width, int height, int tileSize, std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip)
-    : Sprite2D(texture, flip), m_width(width), m_height(height), m_tileSize(tileSize)
+    : MouseButton(texture, flip), m_width(width), m_height(height), m_tileSize(tileSize)
 {
     m_mapData.resize(height, std::vector<int>(width, 0));
     m_textureIndices.resize(256, 0); // Khởi tạo mảng chỉ số ảnh với kích thước mặc định
@@ -96,7 +97,33 @@ void MapManager::Draw(SDL_Renderer * renderer)
                     tile->Draw(renderer);
                 }
             }
+            //if (tileValue == 9) {
+            //    auto texture_1 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+            //    auto m_turret = std::make_shared<Turret>(texture_1, SDL_FLIP_NONE);
+
+
+            //    if (texture_1 != nullptr) {
+            //        auto texture = ResourceManagers::GetInstance()->GetTexture("TileMap/9.png");
+            //        if (texture != nullptr) {
+            //            auto tile = std::make_shared<MouseButton>(texture, m_flip);
+            //            tile->SetSize(tileSize, tileSize);
+            //            tile->Set2DPosition(x * tileSize, y * tileSize);
+            //            tile->SetOnClick([&]() {
+            //                m_turret->Set2DPosition(x * tileSize, y * tileSize);
+            //                });
+            //            //m_listTurret.push_back(m_turret);
+            //            tile->Draw(renderer);
+            //        }
+            //    }
+            //    m_turret->Draw(renderer);
+            //    
+            //}
         }
     }
+
+    /*for (auto it : m_listTurret)
+    {
+        it->Draw(renderer);
+    }*/
 }
 

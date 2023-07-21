@@ -1,15 +1,19 @@
 ﻿#pragma once
 #include "Sprite2D.h"
+#include "MouseButton.h"
+#include "Turret.h"
 #include <vector>
 #include <string>
 #include <memory>
 
-class MapManager : public Sprite2D
+class Turret;
+class MapManager : public MouseButton
 {
 private:
     int m_width;
     int m_height;
     int m_tileSize;
+    std::list<std::shared_ptr<Turret>>	m_listTurret;
     std::vector<std::vector<int>> m_mapData;
     std::vector<int> m_textureIndices; // Lưu trữ chỉ số ảnh tương ứng với từng giá trị tile
 

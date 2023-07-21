@@ -5,6 +5,7 @@ class Sprite2D;
 class SpriteAnimation;
 class MapManager;
 class Enemy;
+class Turret;
 
 class GSPlay :
 	public GameStateBase
@@ -31,9 +32,14 @@ private:
 	std::shared_ptr<Sprite2D>	m_background;
 	std::shared_ptr<MapManager> m_mapManager;
 	std::shared_ptr<Enemy> m_enemy;
+	std::list<std::shared_ptr<Turret>>	m_listTurret;
+	std::shared_ptr<Turret>		m_turret_1,
+		m_turret_2,
+		m_turret_3,
+		m_turret_4;
+
 	//std::shared_ptr<Text>		m_score;
 	std::list<std::shared_ptr<MouseButton>>	m_listButton;
-	std::list<std::shared_ptr<MouseButton>>	m_listButton_2;
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
 	std::list<std::shared_ptr<SpriteAnimation>>	m_listAnimation;
 	std::list<std::shared_ptr<Enemy>>	m_listEnemy;

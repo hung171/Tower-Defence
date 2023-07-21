@@ -6,7 +6,7 @@
 //}
 
 Sprite2D::Sprite2D(std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip)
-	:BaseObject(texture), m_iWidth(100), m_iHeight(50)
+	:BaseObject(texture), m_iWidth(64), m_iHeight(64)
 {
 	m_flip = flip;
 	Init();

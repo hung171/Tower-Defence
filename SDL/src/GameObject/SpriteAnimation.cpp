@@ -111,14 +111,20 @@ void Normalize(Vector3& v)
 int tileSize = 64;
 
 std::vector<Vector3> pathPoints = {
-	Vector3(150, 450, 0),
-	Vector3(100, 450, 0),
-	Vector3(100, 650, 0),
-	Vector3(350, 650, 0),
-	Vector3(350, 550, 0),
-	Vector3(600, 550, 0),
-	Vector3(600, 300, 0),
-
+	Vector3(tileSize * 2.5, tileSize * 3, 0),
+	Vector3(tileSize * 2.5, tileSize * 7, 0),
+	Vector3(tileSize * 1.5, tileSize * 7, 0),
+	Vector3(tileSize * 1.5, tileSize * 10, 0),
+	Vector3(tileSize * 5.5, tileSize * 10, 0),
+	Vector3(tileSize * 5.5, tileSize * 8, 0),
+	Vector3(tileSize * 9.5, tileSize * 8, 0),
+	Vector3(tileSize * 9.5, tileSize * 4, 0),
+	Vector3(tileSize * 6.5, tileSize * 4, 0),
+	Vector3(tileSize * 6.5, tileSize * 1, 0),
+	Vector3(tileSize * 13.5, tileSize * 1, 0),
+	Vector3(tileSize * 13.5, tileSize * 10, 0),
+	Vector3(tileSize * 17.5, tileSize * 10, 0),
+	Vector3(tileSize * 17.5, tileSize * 2, 0),
 };
 
 int currentPathIndex = 0;
