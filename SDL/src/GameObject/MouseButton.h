@@ -12,14 +12,16 @@ public:
 	MouseButton(std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip);
 
 	//Handles mouse event
-	bool HandleTouchEvent(SDL_Event* e);
+	bool HandleMouseEvent(SDL_Event* e, Uint8 button);
 	//Show button sprite
 	void Draw(SDL_Renderer * renderer) override;
 	//SDL_Point* GetButtonPosition();
 	
-	void	SetOnClick(std::function<void(void)>pBtClick);
+	void	SetOnLeftClick(std::function<void(void)>pBtLeftClick);
+	void	SetOnRightClick(std::function<void(void)>pBtRightClick);
 private:
-	std::function<void(void)>m_pBtClick;
+	std::function<void(void)>m_pBtLeftClick;
+	std::function<void(void)>m_pBtRightClick;
 	//Top left position
 	//SDL_Point* mPosition;
 	//Currently used global sprite

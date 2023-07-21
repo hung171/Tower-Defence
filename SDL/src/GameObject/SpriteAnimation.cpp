@@ -2,7 +2,7 @@
 #include "TextureManager.h"
 #include "CMath.h"
 
-SpriteAnimation::SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow,int end, int frameCount, int numAction, float frameTime) : BaseObject(texture)
+SpriteAnimation::SpriteAnimation(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float frameTime) : BaseObject(texture)
 {
 	m_spriteRow = spriteRow;
 	m_frameCount = frameCount;
@@ -38,7 +38,7 @@ void SpriteAnimation::Update(float deltatime)
 {
 	m_currentTicks += deltatime;
 		if (m_currentTicks  >= m_frameTime) {
-		m_currentFrame++;
+			m_currentFrame++;
 		if (m_currentFrame >= m_end) {
 			m_currentFrame = 0;
 		}

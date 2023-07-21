@@ -44,7 +44,7 @@ void GSIntro::HandleKeyEvents(SDL_Event& e)
 {
 }
 
-void GSIntro::HandleTouchEvents(SDL_Event& e, bool bIsPressed)
+void GSIntro::HandleTouchEvents(SDL_Event& e,Uint8 btn , bool bIsPressed)
 {
 }
 

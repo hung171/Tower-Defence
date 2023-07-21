@@ -17,7 +17,7 @@ public:
 
 	virtual void HandleEvents() = 0;
 	virtual void HandleKeyEvents(SDL_Event& e) = 0;
-	virtual void HandleTouchEvents(SDL_Event& e, bool bIsPressed) = 0;
+	virtual void HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed) = 0;
 	virtual void HandleMouseMoveEvents(int x, int y) = 0;
 	virtual void Update(float deltaTime) = 0;
 	virtual void Draw(SDL_Renderer* renderer) = 0;

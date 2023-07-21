@@ -19,7 +19,7 @@ public:
 
 	void	HandleEvents() override;
 	void	HandleKeyEvents(SDL_Event& e) override;
-	void	HandleTouchEvents(SDL_Event& e, bool bIsPressed) override;
+	void	HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed) override;
 	void	HandleMouseMoveEvents(int x, int y) override;
 	void	Update(float deltaTime) override;
 	void	Draw(SDL_Renderer* renderer) override;

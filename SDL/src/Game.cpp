@@ -66,9 +66,18 @@ void Game::Run()
 					}
 
 					//Handle Touch Event
+
+					
 					if (GameStateMachine::GetInstance()->HasState())
 					{
-						GameStateMachine::GetInstance()->CurrentState()->HandleTouchEvents(e, true);
+						if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
+						{
+							GameStateMachine::GetInstance()->CurrentState()->HandleTouchEvents(e, SDL_BUTTON_LEFT, true);
+						}
+						if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT)
+						{
+							GameStateMachine::GetInstance()->CurrentState()->HandleTouchEvents(e, SDL_BUTTON_RIGHT, true);
+						}
 					}
 
 				}

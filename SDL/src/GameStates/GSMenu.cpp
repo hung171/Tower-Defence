@@ -28,7 +28,7 @@ void GSMenu::Init()
 	std::shared_ptr<MouseButton> btnPlay = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnPlay->SetSize(310, 120);
 	btnPlay->Set2DPosition(SCREEN_WIDTH / 3 + 66, SCREEN_HEIDHT / 2 + 80);
-	btnPlay->SetOnClick([]() {
+	btnPlay->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_PLAY);
 		});
 	m_listButton.push_back(btnPlay);
@@ -39,7 +39,7 @@ void GSMenu::Init()
 	//btnClose = std::make_shared<MouseButton>(texture);
 	btnClose->SetSize(50, 50);
 	btnClose->Set2DPosition(SCREEN_WIDTH - 60, 10);
-	btnClose->SetOnClick([]() {
+	btnClose->SetOnLeftClick([]() {
 		exit(0);
 		});
 	m_listButton.push_back(btnClose);
@@ -49,7 +49,7 @@ void GSMenu::Init()
 	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnOption->SetSize(100, 100);
 	btnOption->Set2DPosition((SCREEN_WIDTH - btnOption->GetWidth()) / 3.33 + 10, SCREEN_HEIDHT / 2);
-	btnOption->SetOnClick([]() {
+	btnOption->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
 		});
 	m_listButton.push_back(btnOption);
@@ -59,7 +59,7 @@ void GSMenu::Init()
 	btnCredit = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnCredit->Set2DPosition(SCREEN_WIDTH - 180, 10);
 	btnCredit->SetSize(50, 50);
-	btnCredit->SetOnClick([]() {
+	btnCredit->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_CREDIT);
 		});
 	m_listButton.push_back(btnCredit);
@@ -69,7 +69,7 @@ void GSMenu::Init()
 	std::shared_ptr<MouseButton> btnMusicOn = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnMusicOn->SetSize(50, 50);
 	btnMusicOn->Set2DPosition(SCREEN_WIDTH - 120, 10);
-	btnMusicOn->SetOnClick([]() {
+	btnMusicOn->SetOnLeftClick([]() {
 		std::shared_ptr<Sound> i;
 		i = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
 		i->PlaySound();
@@ -114,15 +114,18 @@ void GSMenu::HandleKeyEvents(SDL_Event& e)
 {
 }
 
-void GSMenu::HandleTouchEvents(SDL_Event& e, bool bIsPressed)
+void GSMenu::HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed)
 {
+
 	for (auto button : m_listButton)
 	{
-		if (button->HandleTouchEvent(&e))
+		if (button->HandleMouseEvent(&e, btn))
 		{
 			break;
 		}
 	}
+
+
 }
 
 void GSMenu::HandleMouseMoveEvents(int x, int y)

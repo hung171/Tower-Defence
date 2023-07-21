@@ -38,32 +38,44 @@ void GSPlay::Init()
 	auto texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->Set2DPosition(64, 64 * 6);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		m_turret_1->Set2DPosition(64, 64 * 6);
+		});
+	button->SetOnRightClick([this]() {
+		m_turret_1->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->Set2DPosition(64 * 7, 64 * 10);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		m_turret_2->Set2DPosition(64 * 7, 64 * 10);
+		});
+	button->SetOnRightClick([this]() {
+		m_turret_2->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->Set2DPosition(64 * 8, 64 * 3);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		m_turret_3->Set2DPosition(64 * 8, 64 * 3);
+		});
+	button->SetOnRightClick([this]() {
+		m_turret_3->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->Set2DPosition(64 * 15, 64 * 9);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		m_turret_4->Set2DPosition(64 * 15, 64 * 9);
+		});
+	button->SetOnRightClick([this]() {
+		m_turret_4->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
 
@@ -73,7 +85,7 @@ void GSPlay::Init()
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
 	button->Set2DPosition(SCREEN_WIDTH - 60, 10);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		GameStateMachine::GetInstance()->PopState();
 		});
 	m_listButton.push_back(button);
@@ -83,14 +95,14 @@ void GSPlay::Init()
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
 	button->Set2DPosition(SCREEN_WIDTH - 120, 10);
-	button->SetOnClick([this]() {
+	button->SetOnLeftClick([this]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_OPTION);
 		});
 	m_listButton.push_back(button);
 
 	// Animation 
 	texture = ResourceManagers::GetInstance()->GetTexture("adventurer-Sheet.png");
-	obj = std::make_shared<SpriteAnimation>(texture, 8, 4, 7, 11, 0.1f);
+	obj = std::make_shared<SpriteAnimation>(texture, 7, 7, 7, 11, 0.1f);
 	obj->SetFlip(SDL_FLIP_NONE);
 	obj->SetSize(64, 64);
 	obj->Set2DPosition(64 * 2.5, 64 * 3);
@@ -178,15 +190,18 @@ void GSPlay::HandleKeyEvents(SDL_Event& e)
 	}
 }
 
-void GSPlay::HandleTouchEvents(SDL_Event& e, bool bIsPressed)
+void GSPlay::HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed)
 {
+
 	for (auto button : m_listButton)
 	{
-		if (button->HandleTouchEvent(&e))
+		if (button->HandleMouseEvent(&e, btn))
 		{
 			break;
 		}
 	}
+
+	
 }
 
 void GSPlay::HandleMouseMoveEvents(int x, int y)
