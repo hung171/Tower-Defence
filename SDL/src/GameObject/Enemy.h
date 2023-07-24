@@ -1,16 +1,22 @@
 ﻿#pragma once
-#include "BaseObject.h"
+#include <memory>
+#include "SDL.h"
+#include <SDL_render.h>
+#include "SpriteAnimation.h"
+#include "CMath.h"
+#include "TextureManager.h"
+#include "Timer.h"
+#include "ResourceManagers.h"
 
-class Enemy : public BaseObject {
-protected:
-	// Khai báo biến và phương thức riêng cho Enemy
+class TextureManager;
+class Enemy : public SpriteAnimation {
 
 public:
-	Enemy() : BaseObject() {}
-	Enemy(std::shared_ptr<TextureManager> texture) : BaseObject(texture) {}
+	Enemy(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float  frameTime);
+	~Enemy();
 
-	virtual void Init() override;
-	virtual void Draw(SDL_Renderer* renderer) override;
-	virtual void Update(float deltaTime) override;
+	void		Init() override;
+
+	void		Move(float deltaTime);
 
 };

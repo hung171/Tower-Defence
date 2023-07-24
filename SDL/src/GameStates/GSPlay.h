@@ -43,7 +43,7 @@ private:
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
 	std::list<std::shared_ptr<SpriteAnimation>>	m_listAnimation;
 	std::list<std::shared_ptr<Enemy>>	m_listEnemy;
-	std::shared_ptr<SpriteAnimation> obj;
+	std::shared_ptr<Enemy> obj;
 	std::shared_ptr<MouseButton> button;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;

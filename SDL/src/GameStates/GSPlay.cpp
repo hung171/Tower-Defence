@@ -45,6 +45,7 @@ void GSPlay::Init()
 		m_turret_1->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
+	m_listTurret.push_back(m_turret_1);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
@@ -56,6 +57,7 @@ void GSPlay::Init()
 		m_turret_2->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
+	m_listTurret.push_back(m_turret_2);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
@@ -67,6 +69,7 @@ void GSPlay::Init()
 		m_turret_3->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
+	m_listTurret.push_back(m_turret_3);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
@@ -78,6 +81,7 @@ void GSPlay::Init()
 		m_turret_4->Set2DPosition(64 * 22, 64 * 14);
 		});
 	m_listButton.push_back(button);
+	m_listTurret.push_back(m_turret_4);
 
 
 	// button close
@@ -102,11 +106,11 @@ void GSPlay::Init()
 
 	// Animation 
 	texture = ResourceManagers::GetInstance()->GetTexture("adventurer-Sheet.png");
-	obj = std::make_shared<SpriteAnimation>(texture, 7, 7, 7, 11, 0.1f);
+	obj = std::make_shared<Enemy>(texture, 7, 7, 7, 11, 0.1f);
 	obj->SetFlip(SDL_FLIP_NONE);
 	obj->SetSize(64, 64);
 	obj->Set2DPosition(64 * 2.5, 64 * 3);
-	m_listAnimation.push_back(obj);
+	m_listEnemy.push_back(obj);
 
 	//Camera::GetInstance()->SetTarget(obj);
 
@@ -221,7 +225,7 @@ void GSPlay::Update(float deltaTime)
 		it->Update(deltaTime);
 	}
 
-	for (auto it : m_listAnimation)
+	for (auto it : m_listEnemy)
 	{
 		if (m_KeyPress == 1)
 		{
@@ -249,13 +253,15 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 		it->Draw(renderer);
 	}
 
-	m_turret_1->Draw(renderer);
-	m_turret_2->Draw(renderer);
-	m_turret_3->Draw(renderer);
-	m_turret_4->Draw(renderer);
-	
-	for (auto it : m_listAnimation)
+	for (auto it : m_listTurret)
 	{
 		it->Draw(renderer);
 	}
+	/*
+	for (auto it : m_listEnemy)
+	{
+		it->Draw(renderer);
+	}*/
+
+	obj->Draw(renderer);
 }
