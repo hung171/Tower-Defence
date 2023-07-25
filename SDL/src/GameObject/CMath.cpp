@@ -1,5 +1,22 @@
 #include "CMath.h"
 #include <math.h>
+
+//MathAddon
+
+const float MathAddon::PI = 3.14159265359f;
+
+
+
+
+float MathAddon::angleRadToDeg(float angle) {
+	return angle * 180.0f / PI;
+}
+
+
+float MathAddon::angleDegToRad(float angle) {
+	return angle * PI / 180.0f;
+}
+
 //Vector2
 
 float Vector2::Length()
@@ -12,6 +29,17 @@ Vector2& Vector2::Normalize()
 	float lenInv = 1.0f / Length();
 	x *= lenInv;
 	y *= lenInv;
+
+	return *this;
+}
+
+Vector2 Vector2::normalize()
+{
+	float magnitudeStored = magnitude();
+	if (magnitudeStored > 0.0f) {
+		x /= magnitudeStored;
+		y /= magnitudeStored;
+	}
 
 	return *this;
 }

@@ -9,6 +9,18 @@
 //#include "esUtil.h"
 //#endif //android
 
+//MathAddon
+
+class MathAddon
+{
+public:
+	static const float PI;
+
+	static float angleRadToDeg(float angle);
+	static float angleDegToRad(float angle);
+};
+
+
 //Vector2
 
 class Vector2
@@ -19,10 +31,12 @@ public:
 	Vector2(float _x, float _y) : x(_x), y(_y) {}
 	Vector2(const float* pArg) : x(pArg[0]), y(pArg[1]) {}
 	Vector2(const Vector2& vector) : x(vector.x), y(vector.y) {}
+	Vector2(float angleRad) : x(cos(angleRad)), y(sin(angleRad)) {}
 
 	//Vector's operations
 	float Length();
 	Vector2& Normalize();
+	Vector2 normalize();
 	Vector2 operator + (Vector2& vector);
 	Vector2& operator += (Vector2& vector);
 	Vector2 operator - ();
@@ -35,6 +49,13 @@ public:
 	Vector2& operator = (Vector2 vector);
 	Vector2 Modulate(Vector2& vector);
 	float Dot(Vector2& vector);
+
+	float magnitude() { return sqrt(x * x + y * y); }
+	float angle() { return atan2(y, x); }
+
+	float dot(const Vector2& other) { return x * other.x + y * other.y; }
+	float cross(const Vector2& other) { return x * other.y - y * other.x; }
+	float angleBetween(const Vector2& other) { return atan2(cross(other), dot(other)); }
 
 	//access to elements
 	float operator [] (unsigned int idx);

@@ -205,6 +205,7 @@ void GSPlay::HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed)
 
 void GSPlay::HandleMouseMoveEvents(int x, int y)
 {
+
 }
 
 void GSPlay::Update(float deltaTime)
@@ -219,6 +220,12 @@ void GSPlay::Update(float deltaTime)
 	{
 		it->Update(deltaTime);
 	}
+
+	for (auto it : m_listTurret)
+	{
+		it->Update(deltaTime);
+	}
+
 
 	m_enemyPool->UpdateAllEnemies(0.2f);
 

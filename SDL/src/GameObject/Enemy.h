@@ -18,11 +18,16 @@
 		void		Init() override;
 
 		void		Move(float deltaTime);
-		void Destroy();
-		bool IsDestroyed() const;
+		void		Destroy();
+		bool		IsDestroyed() const;
+
+		bool		getIsAlive();
+		Vector2		getPos();
 	private:
 		int currentPathIndex;
 		bool isMoving;
 		bool isDestroyed;
+
+		bool isAlive = true;
 
 	};

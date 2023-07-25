@@ -102,3 +102,13 @@ bool Enemy::IsDestroyed() const
     return isDestroyed;
 }
 
+bool Enemy::getIsAlive()
+{
+    return isAlive;
+}
+
+Vector2 Enemy::getPos()
+{
+    return Vector2(m_position.x, m_position.y);
+}
+
