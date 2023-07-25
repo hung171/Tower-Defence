@@ -15,7 +15,7 @@ GSMenu::~GSMenu()
 void GSMenu::Init()
 {
 	//auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("background4.png");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("mybackground.jpg");
 
 	// background
 	//auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -24,17 +24,29 @@ void GSMenu::Init()
 	m_background->Set2DPosition(0, 0);
 
 	// play button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_play.png");
+	texture = ResourceManagers::GetInstance()->GetTexture("button-game/play-btn.png");
 	std::shared_ptr<MouseButton> btnPlay = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
-	btnPlay->SetSize(310, 120);
-	btnPlay->Set2DPosition(SCREEN_WIDTH / 3 + 166, SCREEN_HEIDHT / 2 + 80);
+	btnPlay->SetSize(280, 120);
+	btnPlay->Set2DPosition(SCREEN_WIDTH / 3 + 100, SCREEN_HEIDHT / 2 + 10);
 	btnPlay->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_PLAY);
 		});
 	m_listButton.push_back(btnPlay);
 
+
+	//Option game
+	texture = ResourceManagers::GetInstance()->GetTexture("button-game/option-btn.png");
+	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
+	btnOption->SetSize(280, 120);
+	btnOption->Set2DPosition(SCREEN_WIDTH / 3 + 100, SCREEN_HEIDHT / 2 + 160);
+	btnOption->SetOnLeftClick([]() {
+		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
+		});
+	m_listButton.push_back(btnOption);
+
+
 	// exit button
-	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("button-game/close-btn.png");
 	std::shared_ptr<MouseButton> btnClose = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	//btnClose = std::make_shared<MouseButton>(texture);
 	btnClose->SetSize(50, 50);
@@ -44,28 +56,19 @@ void GSMenu::Init()
 		});
 	m_listButton.push_back(btnClose);
 
-	//Setting game
-	texture = ResourceManagers::GetInstance()->GetTexture("");
-	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
-	btnOption->SetSize(100, 100);
-	btnOption->Set2DPosition((SCREEN_WIDTH - btnOption->GetWidth()) / 3.33 + 10, SCREEN_HEIDHT / 2);
-	btnOption->SetOnLeftClick([]() {
-		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
-		});
-	m_listButton.push_back(btnOption);
 
 	//Credit game
-	texture = ResourceManagers::GetInstance()->GetTexture("btn_help.tga");
+	/*texture = ResourceManagers::GetInstance()->GetTexture("btn_help.tga");
 	btnCredit = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnCredit->Set2DPosition(SCREEN_WIDTH - 180, 10);
 	btnCredit->SetSize(50, 50);
 	btnCredit->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_CREDIT);
 		});
-	m_listButton.push_back(btnCredit);
+	m_listButton.push_back(btnCredit);*/
 
 	//Button Music
-	texture = ResourceManagers::GetInstance()->GetTexture("btn_music.tga");
+	/*texture = ResourceManagers::GetInstance()->GetTexture("btn_music.tga");
 	std::shared_ptr<MouseButton> btnMusicOn = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnMusicOn->SetSize(50, 50);
 	btnMusicOn->Set2DPosition(SCREEN_WIDTH - 120, 10);
@@ -74,7 +77,7 @@ void GSMenu::Init()
 		i = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
 		i->PlaySound();
 		});
-	m_listButton.push_back(btnMusicOn);
+	m_listButton.push_back(btnMusicOn);*/
 
 	// game title
 	///Set Font
