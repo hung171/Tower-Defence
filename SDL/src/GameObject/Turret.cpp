@@ -38,8 +38,22 @@ float Turret::UpdateAngle(int x, int y)
 {
 	t_x = x;
 	t_y = y;
-	return atan2(y - m_position.y, x - m_position.x) * 180.0 / M_PI;
+	if (inRange(x, y)) {
+		return -10 + atan2(y - (m_position.y + 32), x - (m_position.x + 32)) * 180.0 / M_PI;
+	}
+	return 0;
 }
+
+bool Turret::inRange(int x, int y)
+{
+	int distance = sqrt((x - (m_position.x + 32)) * (x - (m_position.x + 32)) + (y - (m_position.y + 32)) * (y - (m_position.y + 32)));
+	if (distance > 64 * 3) {
+		return false;
+	}
+	return true;
+}
+
+
 
 
 

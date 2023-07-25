@@ -16,6 +16,8 @@ public:
 	void Update(float deltatime) override;
 	float UpdateAngle(int x, int y);
 
+	bool inRange(int x, int y);
+
 private:
 	float angle;
 	static const float speedAngular, weaponRange;
