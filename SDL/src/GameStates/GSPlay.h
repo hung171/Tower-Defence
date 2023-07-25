@@ -27,6 +27,7 @@ public:
 	void	HandleMouseMoveEvents(int x, int y) override;
 	void	Update(float deltaTime) override;
 	void	Draw(SDL_Renderer* renderer) override;
+	void	HandleMouseEvent(SDL_MouseMotionEvent event);
 	int m_KeyPress;
 
 private:
@@ -49,5 +50,5 @@ private:
 	std::vector<Vector3> pathPoints;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;
-
+	int m_x, m_y;
 };

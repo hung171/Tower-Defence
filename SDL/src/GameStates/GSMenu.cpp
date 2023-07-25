@@ -115,6 +115,7 @@ void GSMenu::HandleEvents()
 
 void GSMenu::HandleKeyEvents(SDL_Event& e)
 {
+
 }
 
 void GSMenu::HandleTouchEvents(SDL_Event& e, Uint8 btn, bool bIsPressed)

@@ -8,6 +8,7 @@
 #include "GameObject/Enemy.h"
 #include "GameObject/Turret.h"
 #include "GameObject/EnemyPool.h"
+#include "iostream"
 
 
 GSPlay::GSPlay()
@@ -111,6 +112,8 @@ void GSPlay::Init()
 
 	//Camera::GetInstance()->SetTarget(obj);
 
+	
+	
 
 	m_KeyPress = 0;
 }
@@ -141,6 +144,13 @@ void GSPlay::HandleEvents()
 
 void GSPlay::HandleKeyEvents(SDL_Event& e)
 {
+
+	if (e.type == SDL_MOUSEMOTION) {
+		m_x = e.motion.x;
+		m_y = e.motion.y;
+	}
+	
+
 	//If a key was pressed
 	if (e.type == SDL_KEYDOWN && e.key.repeat == 0) //For e.key.repeat it's because key repeat is enabled by default and if you press and hold a key it will report multiple key presses. That means we have to check if the key press is the first one because we only care when the key was first pressed.
 	{
@@ -223,9 +233,10 @@ void GSPlay::Update(float deltaTime)
 
 	for (auto it : m_listTurret)
 	{
+		it->UpdateAngle(m_x, m_y);
 		it->Update(deltaTime);
 	}
-
+	//std::cout << m_x << " " << m_y << std::endl;
 
 	m_enemyPool->UpdateAllEnemies(0.2f);
 
