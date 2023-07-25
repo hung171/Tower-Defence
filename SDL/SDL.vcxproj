@@ -170,6 +170,7 @@
     <ClCompile Include="src\GameObject\CMath.cpp" />
     <ClCompile Include="src\GameObject\Dot.cpp" />
     <ClCompile Include="src\GameObject\Enemy.cpp" />
+    <ClCompile Include="src\GameObject\EnemyPool.cpp" />
     <ClCompile Include="src\GameObject\MapManager.cpp" />
     <ClCompile Include="src\GameObject\MouseButton.cpp" />
     <ClCompile Include="src\GameObject\Renderer.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="src\GameObject\Define.h" />
     <ClInclude Include="src\GameObject\Dot.h" />
     <ClInclude Include="src\GameObject\Enemy.h" />
+    <ClInclude Include="src\GameObject\EnemyPool.h" />
     <ClInclude Include="src\GameObject\MapManager.h" />
     <ClInclude Include="src\GameObject\MouseButton.h" />
     <ClInclude Include="src\GameObject\Renderer.h" />

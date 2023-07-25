@@ -6,6 +6,7 @@ class SpriteAnimation;
 class MapManager;
 class Enemy;
 class Turret;
+class EnemyPool;
 
 class GSPlay :
 	public GameStateBase
@@ -31,7 +32,6 @@ public:
 private:
 	std::shared_ptr<Sprite2D>	m_background;
 	std::shared_ptr<MapManager> m_mapManager;
-	std::shared_ptr<Enemy> m_enemy;
 	std::list<std::shared_ptr<Turret>>	m_listTurret;
 	std::shared_ptr<Turret>		m_turret_1,
 		m_turret_2,
@@ -43,8 +43,10 @@ private:
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
 	std::list<std::shared_ptr<SpriteAnimation>>	m_listAnimation;
 	std::list<std::shared_ptr<Enemy>>	m_listEnemy;
-	std::shared_ptr<Enemy> obj;
+	std::shared_ptr<Enemy> m_enemy1, m_enemy2, m_enemy3;
+	std::shared_ptr<EnemyPool> m_enemyPool;
 	std::shared_ptr<MouseButton> button;
+	std::vector<Vector3> pathPoints;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;
 

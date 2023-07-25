@@ -1,15 +1,17 @@
 ﻿#include "Enemy.h"
 #include "CMath.h"
+#include "EnemyPool.h"
 #include <iostream>
 
 int tileSize = 64;
-int currentPathIndex = 0;
-bool isMoving = true;
 
 
 Enemy::Enemy(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float frameTime)
 	: SpriteAnimation(texture, spriteRow, end, frameCount, numAction, frameTime)
 {
+    isMoving = true;
+    currentPathIndex = 0;
+    isDestroyed = false;
 }
 Enemy::~Enemy()
 {
@@ -53,30 +55,50 @@ std::vector<Vector3> pathPoints = {
 
 void Enemy::Move(float deltaTime)
 {
-	if (isMoving && currentPathIndex < pathPoints.size())
-	{
-		Vector3 targetPoint = pathPoints[currentPathIndex];
+    if (!isDestroyed && isMoving && currentPathIndex < pathPoints.size())
+    {
+        Vector3 targetPoint = pathPoints[currentPathIndex];
 
-		Vector3 direction = targetPoint - m_position;
-		float distance = sqrt(direction.x * direction.x + direction.y * direction.y + direction.z * direction.z);
+        Vector3 direction = targetPoint - m_position;
+        float distance = sqrt(direction.x * direction.x + direction.y * direction.y + direction.z * direction.z);
 
-		if (distance < 10.0f)
-		{
-			m_position = targetPoint;
-			currentPathIndex++;
+        if (distance < 10.0f)
+        {
+            m_position = targetPoint;
+            currentPathIndex++;
 
-			if (currentPathIndex == pathPoints.size())
-			{
-				isMoving = false;
-			}
-		}
-		else
-		{
-			normalize(direction);
-			m_position += direction * 20 * deltaTime;
-		}
-	}
+            if (currentPathIndex < pathPoints.size())
+            {
+                targetPoint = pathPoints[currentPathIndex];
+                direction = targetPoint - m_position;
+                distance = sqrt(direction.x * direction.x + direction.y * direction.y + direction.z * direction.z);
+            }
+            else
+            {
+                // Gọi hàm hủy khi enemy đi đến điểm tọa độ cuối
+                Destroy();
+                return;
+            }
+        }
+
+        if (distance >= 10.0f)
+        {
+            normalize(direction);
+            m_position += direction * 20 * deltaTime;
+        }
+    }
+}
+
+void Enemy::Destroy()
+{
+
+    // Đánh dấu là Enemy đã bị hủy
+    isDestroyed = true;
 }
 
 
+bool Enemy::IsDestroyed() const
+{
+    return isDestroyed;
+}
 

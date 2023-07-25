@@ -7,6 +7,7 @@
 #include "GameObject/MapManager.h"
 #include "GameObject/Enemy.h"
 #include "GameObject/Turret.h"
+#include "GameObject/EnemyPool.h"
 
 
 GSPlay::GSPlay()
@@ -104,17 +105,11 @@ void GSPlay::Init()
 		});
 	m_listButton.push_back(button);
 
-	// Animation 
-	texture = ResourceManagers::GetInstance()->GetTexture("adventurer-Sheet.png");
-	obj = std::make_shared<Enemy>(texture, 7, 7, 7, 11, 0.1f);
-	obj->SetFlip(SDL_FLIP_NONE);
-	obj->SetSize(64, 64);
-	obj->Set2DPosition(64 * 2.5, 64 * 3);
-	m_listEnemy.push_back(obj);
+	// Enemy
+
+	m_enemyPool = std::make_shared<EnemyPool>(3, 2.0f); // 3 đối thủ trong pool
 
 	//Camera::GetInstance()->SetTarget(obj);
-
-	// enemy
 
 
 	m_KeyPress = 0;
@@ -225,17 +220,7 @@ void GSPlay::Update(float deltaTime)
 		it->Update(deltaTime);
 	}
 
-	for (auto it : m_listEnemy)
-	{
-		if (m_KeyPress == 1)
-		{
-
-			//it->MoveLeft(deltaTime);
-		}
-		it->Update(deltaTime);
-		it->Move(0.1f);
-	}
-
+	m_enemyPool->UpdateAllEnemies(0.5f);
 
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);
@@ -257,11 +242,7 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-	/*
-	for (auto it : m_listEnemy)
-	{
-		it->Draw(renderer);
-	}*/
 
-	obj->Draw(renderer);
+
+	m_enemyPool->DrawAllEnemies(renderer);
 }
