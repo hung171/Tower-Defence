@@ -53,7 +53,6 @@ void EnemyPool::DrawAllEnemies(SDL_Renderer* renderer)
     for (const auto& enemy : pool) {
         if (enemy != nullptr) {
             enemy->Draw(renderer);
-            std::cout << "Enemy drawn!" << std::endl;
         }
     }
 }

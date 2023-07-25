@@ -27,7 +27,7 @@ void GSMenu::Init()
 	texture = ResourceManagers::GetInstance()->GetTexture("button_play.png");
 	std::shared_ptr<MouseButton> btnPlay = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnPlay->SetSize(310, 120);
-	btnPlay->Set2DPosition(SCREEN_WIDTH / 3 + 66, SCREEN_HEIDHT / 2 + 80);
+	btnPlay->Set2DPosition(SCREEN_WIDTH / 3 + 166, SCREEN_HEIDHT / 2 + 80);
 	btnPlay->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_PLAY);
 		});

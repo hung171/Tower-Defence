@@ -107,7 +107,7 @@ void GSPlay::Init()
 
 	// Enemy
 
-	m_enemyPool = std::make_shared<EnemyPool>(3, 2.0f); // 3 đối thủ trong pool
+	m_enemyPool = std::make_shared<EnemyPool>(7, 2.0f); // 3 đối thủ trong pool
 
 	//Camera::GetInstance()->SetTarget(obj);
 
@@ -220,7 +220,7 @@ void GSPlay::Update(float deltaTime)
 		it->Update(deltaTime);
 	}
 
-	m_enemyPool->UpdateAllEnemies(0.5f);
+	m_enemyPool->UpdateAllEnemies(0.2f);
 
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);
