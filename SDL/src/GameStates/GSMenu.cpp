@@ -35,14 +35,14 @@ void GSMenu::Init()
 
 
 	//Option game
-	texture = ResourceManagers::GetInstance()->GetTexture("button-game/option-btn.png");
+	/*texture = ResourceManagers::GetInstance()->GetTexture("button-game/option-btn.png");
 	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnOption->SetSize(280, 120);
 	btnOption->Set2DPosition(SCREEN_WIDTH / 3 + 100, SCREEN_HEIDHT / 2 + 160);
 	btnOption->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
 		});
-	m_listButton.push_back(btnOption);
+	m_listButton.push_back(btnOption);*/
 
 
 	// exit button
@@ -58,36 +58,36 @@ void GSMenu::Init()
 
 
 	//Credit game
-	/*texture = ResourceManagers::GetInstance()->GetTexture("btn_help.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("button-game/credit-btn.png");
 	btnCredit = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnCredit->Set2DPosition(SCREEN_WIDTH - 180, 10);
 	btnCredit->SetSize(50, 50);
 	btnCredit->SetOnLeftClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_CREDIT);
 		});
-	m_listButton.push_back(btnCredit);*/
+	m_listButton.push_back(btnCredit);
 
 	//Button Music
-	/*texture = ResourceManagers::GetInstance()->GetTexture("btn_music.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("button-game/sound-btn.png");
 	std::shared_ptr<MouseButton> btnMusicOn = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnMusicOn->SetSize(50, 50);
 	btnMusicOn->Set2DPosition(SCREEN_WIDTH - 120, 10);
 	btnMusicOn->SetOnLeftClick([]() {
 		std::shared_ptr<Sound> i;
-		i = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
+		i = std::make_shared<Sound>("Data/Sounds/menu.mp3");
 		i->PlaySound();
 		});
-	m_listButton.push_back(btnMusicOn);*/
+	m_listButton.push_back(btnMusicOn);
 
 	// game title
 	///Set Font
-	m_textColor = { 255, 255, 0 };
+	/*m_textColor = { 255, 255, 0 };
 	m_textGameName = std::make_shared<Text>("Data/lazy.ttf", m_textColor);
 	m_textGameName->SetSize(300, 50);
 	m_textGameName->Set2DPosition((SCREEN_WIDTH - m_textGameName->GetWidth()) / 2, SCREEN_HEIDHT / 2 - 300);
-	m_textGameName->LoadFromRenderText("");
+	m_textGameName->LoadFromRenderText("");*/
 	//m_Sound = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
-	m_Sound = std::make_shared<Sound>("Data/Sounds/TheHeroIkareruKobushiNiHiWoTsukeroTvSize-JamProject-4304931.mp3");
+	m_Sound = std::make_shared<Sound>("Data/Sounds/menu.mp3");
 	m_Sound->PlaySound();
 }
 
@@ -158,5 +158,5 @@ void GSMenu::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
-	m_textGameName->Draw(renderer);
+	//m_textGameName->Draw(renderer);
 }

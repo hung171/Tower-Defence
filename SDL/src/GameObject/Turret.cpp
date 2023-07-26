@@ -34,7 +34,7 @@ void Turret::Update(float deltatime)
 	//Sprite2D::Update(deltatime);
 }
 
-float Turret::UpdateAngle(int x, int y)
+float Turret::UpdateAngle(float x, float y)
 {
 	t_x = x;
 	t_y = y;
@@ -44,7 +44,7 @@ float Turret::UpdateAngle(int x, int y)
 	return 0;
 }
 
-bool Turret::inRange(int x, int y)
+bool Turret::inRange(float x, float y)
 {
 	int distance = sqrt((x - (m_position.x + 32)) * (x - (m_position.x + 32)) + (y - (m_position.y + 32)) * (y - (m_position.y + 32)));
 	if (distance > 64 * 3) {

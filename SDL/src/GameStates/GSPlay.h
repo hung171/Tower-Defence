@@ -1,6 +1,7 @@
 #pragma once
 #include "GameStateBase.h"
 #include "GameObject/MouseButton.h"
+#include "Sound.h"
 class Sprite2D;
 class SpriteAnimation;
 class MapManager;
@@ -27,28 +28,32 @@ public:
 	void	HandleMouseMoveEvents(int x, int y) override;
 	void	Update(float deltaTime) override;
 	void	Draw(SDL_Renderer* renderer) override;
-	void	HandleMouseEvent(SDL_MouseMotionEvent event);
-	int m_KeyPress;
+	//void	HandleMouseEvent(SDL_MouseMotionEvent event);
+	int p_KeyPress;
 
 private:
-	std::shared_ptr<Sprite2D>	m_background;
-	std::shared_ptr<MapManager> m_mapManager;
-	std::list<std::shared_ptr<Turret>>	m_listTurret;
-	std::shared_ptr<Turret>		m_turret_1,
-		m_turret_2,
-		m_turret_3,
-		m_turret_4;
+	std::shared_ptr<Sprite2D>	p_background;
+	std::shared_ptr<Sprite2D>	p_h_start;
+	std::shared_ptr<Sprite2D>	p_h_end;
+
+	std::shared_ptr<MapManager> p_mapManager;
+	std::list<std::shared_ptr<Turret>>	p_listTurret;
+	std::shared_ptr<Turret>		p_turret_1,
+		p_turret_2,
+		p_turret_3,
+		p_turret_4;
 
 	//std::shared_ptr<Text>		m_score;
-	std::list<std::shared_ptr<MouseButton>>	m_listButton;
+	std::shared_ptr<Sound>					p_Sound;
+	std::list<std::shared_ptr<MouseButton>>	p_listButton;
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
-	std::list<std::shared_ptr<SpriteAnimation>>	m_listAnimation;
-	std::list<std::shared_ptr<Enemy>>	m_listEnemy;
-	std::shared_ptr<Enemy> m_enemy1, m_enemy2, m_enemy3;
-	std::shared_ptr<EnemyPool> m_enemyPool;
+	std::list<std::shared_ptr<SpriteAnimation>>	p_listAnimation;
+	std::list<std::shared_ptr<Enemy>>	p_listEnemy;
+	std::shared_ptr<Enemy> p_enemy1, p_enemy2, p_enemy3;
+	std::shared_ptr<EnemyPool> p_enemyPool;
 	std::shared_ptr<MouseButton> button;
 	std::vector<Vector3> pathPoints;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;
-	int m_x, m_y;
+	float p_x, p_y;
 };

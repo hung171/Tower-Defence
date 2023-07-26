@@ -57,7 +57,7 @@ void normalize(Vector3& vector)
 }
 
 std::vector<Vector3> pathPoints = {
-	Vector3(tileSize * 2.5, tileSize * 3, 0),
+	Vector3(tileSize * 2.5, tileSize * 1, 0),
 	Vector3(tileSize * 2.5, tileSize * 7, 0),
 	Vector3(tileSize * 1.5, tileSize * 7, 0),
 	Vector3(tileSize * 1.5, tileSize * 10, 0),

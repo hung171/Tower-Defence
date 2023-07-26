@@ -14,9 +14,9 @@ public:
 	Turret(std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip);
 	void Draw(SDL_Renderer* renderer);
 	void Update(float deltatime) override;
-	float UpdateAngle(int x, int y);
+	float UpdateAngle(float x, float y);
 
-	bool inRange(int x, int y);
+	bool inRange(float x, float y);
 
 private:
 	float angle;
@@ -24,6 +24,6 @@ private:
 	std::weak_ptr<Enemy> enemyTarget;
 
 	Vector2 pos;
-	int t_x, t_y;
+	float t_x, t_y;
 };
 
