@@ -108,7 +108,7 @@ void GSPlay::Init()
 
 	// Enemy
 
-	m_enemyPool = std::make_shared<EnemyPool>(7, 2.0f); // 3 đối thủ trong pool
+	m_enemyPool = std::make_shared<EnemyPool>(30, 10.0f); // 3 đối thủ trong pool
 
 	//Camera::GetInstance()->SetTarget(obj);
 

@@ -2,6 +2,7 @@
 #include "CMath.h"
 #include "EnemyPool.h"
 #include <iostream>
+#include "Dot.h"
 
 int tileSize = 64;
 
@@ -22,6 +23,25 @@ void Enemy::Init()
 {
 
 }
+
+void Enemy::Update(float deltaTime)
+{
+    // Cập nhật hành động của enemy tại đây
+    m_currentTicks += deltaTime;
+    if (m_currentTicks >= m_frameTime) {
+        m_currentFrame++;
+        if (m_currentFrame >= m_end) {
+            m_currentFrame = 0;
+        }
+        if (m_currentFrame >= m_frameCount) {
+            m_currentFrame = 0;
+        }
+        m_currentTicks -= m_frameTime;
+    }
+}
+
+
+
 
 void normalize(Vector3& vector)
 {
@@ -110,5 +130,17 @@ bool Enemy::getIsAlive()
 Vector2 Enemy::getPos()
 {
     return Vector2(m_position.x, m_position.y);
+}
+
+void Enemy::SetColliding(bool value) {
+    isColliding = value;
+}
+
+bool Enemy::IsColliding() const {
+    return isColliding;
+}
+
+Circle& Enemy::GetCollider() {
+    return mCollider;
 }
 
