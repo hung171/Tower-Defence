@@ -1,7 +1,10 @@
 ﻿#include "EnemyPool.h"
+#include "Dot.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <cstdlib> 
+#include <ctime>
 
 EnemyPool::EnemyPool(int poolSize, float creationDelay)
     : poolSize(poolSize), nextAvailableIndex(0), timeSinceLastCreation(0.0f), creationDelay(creationDelay)
@@ -30,7 +33,9 @@ void EnemyPool::UpdateAllEnemies(float deltaTime)
     // Cập nhật tất cả các đối thủ trong pool
     for (const auto& enemy : pool) {
         if (enemy != nullptr) {
+            enemy->Update(deltaTime);
             enemy->Move(deltaTime); // Di chuyển tất cả các enemy trong pool
+
 
             // Kiểm tra nếu enemy đã bị hủy (đến điểm cuối) thì xóa nó khỏi danh sách
             if (enemy->IsDestroyed()) {
@@ -43,7 +48,10 @@ void EnemyPool::UpdateAllEnemies(float deltaTime)
     timeSinceLastCreation += deltaTime;
     if (timeSinceLastCreation >= creationDelay) {
         CreateNextEnemy(); // Tạo enemy mới
-        timeSinceLastCreation = 0.0f; // Reset thời gian delay
+
+        // Tạo thời gian delay ngẫu nhiên từ 1s đến 4s cho lần tạo enemy tiếp theo
+        float randomDelay = 1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 20.0f));
+        timeSinceLastCreation = -randomDelay; // Đặt thời gian delay ngẫu nhiên
     }
 }
 
@@ -59,16 +67,21 @@ void EnemyPool::DrawAllEnemies(SDL_Renderer* renderer)
 
 void EnemyPool::CreateNextEnemy()
 {
-    auto texture = ResourceManagers::GetInstance()->GetTexture("adventurer-Sheet.png");
-    auto enemy1 = CreateEnemy(texture, 7, 7, 7, 11, 0.1f);
-    if (enemy1 != nullptr)
+    // Sinh số ngẫu nhiên từ 0 đến 1
+    int randomEnemy = rand() % 2; // randomEnemy sẽ là 0 hoặc 1
+
+    // Tạo ngẫu nhiên enemy1 hoặc enemy2
+    auto texture = ResourceManagers::GetInstance()->GetTexture(randomEnemy == 0 ? "enemy1.png" : "enemy2.png");
+    auto enemy = CreateEnemy(texture, 1, 6, 7, 1, 1.0f);
+
+    if (enemy != nullptr)
     {
-        enemy1->Set2DPosition(64 * 2.5, 64 * 3);
-        enemy1->SetSize(64, 64);
-        enemy1->SetFlip(SDL_FLIP_NONE);
-        
+        enemy->Set2DPosition(64 * 2.5, 64 * 3);
+        enemy->SetSize(64, 64);
+        enemy->SetFlip(SDL_FLIP_NONE);
     }
 }
+
 
 void EnemyPool::DestroyEnemiesAtEndPoint()
 {
