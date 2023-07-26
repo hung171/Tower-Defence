@@ -7,7 +7,6 @@ class MapManager;
 class Enemy;
 class Turret;
 class EnemyPool;
-class Projectile;
 
 class GSPlay :
 	public GameStateBase
@@ -28,12 +27,11 @@ public:
 	void	HandleMouseMoveEvents(int x, int y) override;
 	void	Update(float deltaTime) override;
 	void	Draw(SDL_Renderer* renderer) override;
-	
+	void	HandleMouseEvent(SDL_MouseMotionEvent event);
 	int m_KeyPress;
 
 private:
-	std::shared_ptr<Sprite2D>	m_h_start;
-	std::shared_ptr<Sprite2D>	m_h_end;
+	std::shared_ptr<Sprite2D>	m_background;
 	std::shared_ptr<MapManager> m_mapManager;
 	std::list<std::shared_ptr<Turret>>	m_listTurret;
 	std::shared_ptr<Turret>		m_turret_1,
@@ -41,7 +39,6 @@ private:
 		m_turret_3,
 		m_turret_4;
 
-	
 	//std::shared_ptr<Text>		m_score;
 	std::list<std::shared_ptr<MouseButton>>	m_listButton;
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
@@ -53,5 +50,5 @@ private:
 	std::vector<Vector3> pathPoints;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;
-	float m_x, m_y;
+	int m_x, m_y;
 };

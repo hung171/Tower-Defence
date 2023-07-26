@@ -4,15 +4,12 @@ class Timer
 {
 public:
 	Timer();
-	Timer(float setTimeSMax, float setTimeSCurrent = 0.0f);
+	
 	// The various clock actions
 	void Start();
 	void Stop();
 	void Pause();
 	void UnPause();
-	void countDown(float dT);
-	void resetToMax();
-	bool timeSIsZero();
 
 	//Getsthe timer's time
 	Uint32 GetTicks();
@@ -27,7 +24,5 @@ private:
 	//The timer status
 	bool mPaused;
 	bool mStarted;
-	float timeSMax;
-	float timeSCurrent;
 };
 

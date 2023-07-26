@@ -63,7 +63,7 @@ void EnemyPool::CreateNextEnemy()
     auto enemy1 = CreateEnemy(texture, 7, 7, 7, 11, 0.1f);
     if (enemy1 != nullptr)
     {
-        enemy1->Set2DPosition(64 * 2.5, 64 * 1);
+        enemy1->Set2DPosition(64 * 2.5, 64 * 3);
         enemy1->SetSize(64, 64);
         enemy1->SetFlip(SDL_FLIP_NONE);
         

@@ -27,27 +27,17 @@ void GSPlay::Init()
 	m_mapManager = std::make_shared<MapManager>(21, 13, 64, nullptr, SDL_FLIP_NONE);
 	m_mapManager->LoadFromFile("Data/Textures/map01.txt");
 
-	auto texture = ResourceManagers::GetInstance()->GetTexture("h_start.png");
-	m_h_start = std::make_shared<Sprite2D>(texture, SDL_FLIP_NONE);
-	m_h_start->SetSize(64, 64);
-	m_h_start->Set2DPosition(64 * 2.5, 64 * 1);
-
-	texture = ResourceManagers::GetInstance()->GetTexture("h_end.png");
-	m_h_end = std::make_shared<Sprite2D>(texture, SDL_FLIP_NONE);
-	m_h_end->SetSize(64, 64);
-	m_h_end->Set2DPosition(64 * 17.5, 64 * 2);
-
-	auto texture_1 = ResourceManagers::GetInstance()->GetTexture("Turret/turret.png");
-	auto texture_2 = ResourceManagers::GetInstance()->GetTexture("Turret/turret.png");
-	auto texture_3 = ResourceManagers::GetInstance()->GetTexture("Turret/turret.png");
-	auto texture_4 = ResourceManagers::GetInstance()->GetTexture("Turret/turret.png");
+	auto texture_1 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_2 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_3 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
+	auto texture_4 = ResourceManagers::GetInstance()->GetTexture("Turret/RedTurret.png");
 	m_turret_1 = std::make_shared<Turret>(texture_1, SDL_FLIP_NONE);
 	m_turret_2 = std::make_shared<Turret>(texture_2, SDL_FLIP_NONE);
 	m_turret_3 = std::make_shared<Turret>(texture_3, SDL_FLIP_NONE);
 	m_turret_4 = std::make_shared<Turret>(texture_4, SDL_FLIP_NONE);
 
 
-	texture = ResourceManagers::GetInstance()->GetTexture("");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->Set2DPosition(64, 64 * 6);
 	button->SetOnLeftClick([this]() {
@@ -97,7 +87,7 @@ void GSPlay::Init()
 
 
 	// button close
-	texture = ResourceManagers::GetInstance()->GetTexture("button-game/close-btn.png");
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
 	button->Set2DPosition(SCREEN_WIDTH - 60, 10);
@@ -106,11 +96,8 @@ void GSPlay::Init()
 		});
 	m_listButton.push_back(button);
 
-	/*Vector2 a = Vector2(1, 2);
-
-	a=a.Normalize();*/
-	// button settings
-	texture = ResourceManagers::GetInstance()->GetTexture("button-game/settings-btn.png");
+	// settings close
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_settings.tga");
 	button = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	button->SetSize(50, 50);
 	button->Set2DPosition(SCREEN_WIDTH - 120, 10);
@@ -263,8 +250,6 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	
 	// Vẽ Map
 	m_mapManager->Draw(renderer);
-	m_h_start->Draw(renderer);
-	m_h_end->Draw(renderer);
 
 	for (auto it : m_listButton)
 	{
@@ -275,6 +260,7 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 	{
 		it->Draw(renderer);
 	}
+
 
 	m_enemyPool->DrawAllEnemies(renderer);
 }
