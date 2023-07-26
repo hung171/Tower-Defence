@@ -1,6 +1,11 @@
 #include "Timer.h"
 #include <SDL_timer.h>
 
+Timer::Timer(float setTimeSMax, float setTimeSCurrent) :
+	timeSMax(setTimeSMax), timeSCurrent(setTimeSCurrent) {
+
+}
+
 Timer::Timer()
 {
 	//Initialize the variable
@@ -30,6 +35,14 @@ void Timer::Stop()
 	mPausedTicks = 0;
 
 }
+void Timer::countDown(float dT)
+{
+	if (timeSCurrent > 0.0f) {
+		timeSCurrent -= dT;
+		if (timeSCurrent < 0.0f)
+			timeSCurrent = 0.0f;
+	}
+}
 void Timer::Pause()
 {
 	//IF the timer is running and isn't already paused
@@ -42,6 +55,10 @@ void Timer::Pause()
 		mStartTicks = 0;
 	}
 }
+void Timer::resetToMax()
+{
+	timeSCurrent = timeSMax;
+}
 void Timer::UnPause()
 {
 	//IF the timer is running and already paused
@@ -53,6 +70,10 @@ void Timer::UnPause()
 		mStartTicks = SDL_GetTicks() - mPausedTicks;
 		mPausedTicks = 0;
 	}
+}
+bool Timer::timeSIsZero()
+{
+	return (timeSCurrent <= 0.0f);
 }
 Uint32 Timer::GetTicks()
 {

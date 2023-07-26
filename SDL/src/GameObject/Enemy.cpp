@@ -25,19 +25,19 @@ void Enemy::Init()
 
 void normalize(Vector3& vector)
 {
-	float lengthSquared = vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
-	if (lengthSquared > 0)
-	{
-		float inverseLength = 1.0f / sqrt(lengthSquared);
-		vector.x *= inverseLength;
-		vector.y *= inverseLength;
-		vector.z *= inverseLength;
+    float lengthSquared = vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
+    if (lengthSquared > 0)
+    {
+        float inverseLength = 1.0f / sqrt(lengthSquared);
+        vector.x *= inverseLength;
+        vector.y *= inverseLength;
+        vector.z *= inverseLength;
 
-	}
+    }
 }
 
 std::vector<Vector3> pathPoints = {
-	Vector3(tileSize * 2.5, tileSize * 3, 0),
+	Vector3(tileSize * 2.5, tileSize * 1, 0),
 	Vector3(tileSize * 2.5, tileSize * 7, 0),
 	Vector3(tileSize * 1.5, tileSize * 7, 0),
 	Vector3(tileSize * 1.5, tileSize * 10, 0),
