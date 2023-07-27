@@ -30,6 +30,11 @@ void Turret::Update(float deltatime)
 	//Uint32 mouseState = SDL_GetMouseState(&x, &y);
 	SetRotation(UpdateAngle(t_x, t_y));
 
+	if (shootCooldown > 0.0f)
+	{
+		shootCooldown -= deltatime;
+	}
+
 }
 	
 

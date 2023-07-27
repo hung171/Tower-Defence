@@ -3,6 +3,8 @@
 #include "GameObject/MouseButton.h"
 #include "Sound.h"
 #include "Timer.h"
+#include "GSWin.h"
+
 class Sprite2D;
 class SpriteAnimation;
 class MapManager;
@@ -30,6 +32,9 @@ public:
 	void	HandleMouseMoveEvents(int x, int y) override;
 	void	Update(float deltaTime) override;
 	void	Draw(SDL_Renderer* renderer) override;
+
+	bool CheckWinCondition() const;
+	bool CheckLoseCondition() const;
 	//void	HandleMouseEvent(SDL_MouseMotionEvent event);
 	int p_KeyPress;
 
@@ -65,4 +70,10 @@ private:
 	float p_x, p_y;
 	float mouseX, mouseY;
 	//float time;
+
+	// check status
+	bool m_isWin;
+	bool m_isLose;
+	float shootCooldown;
+	
 };

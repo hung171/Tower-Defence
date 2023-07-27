@@ -44,7 +44,6 @@ void Projectile::Update(float deltatime)
 
 	// Tính toán khoảng cách đã bay của đạn
 	distanceTraveled += speed * deltatime;
-	std::cout << distanceTraveled;
 	// Kiểm tra xem đạn đã bay quá maxdistance chưa
 	if (distanceTraveled >= maxdistance)
 	{

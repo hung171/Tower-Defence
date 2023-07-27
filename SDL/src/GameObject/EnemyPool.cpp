@@ -51,7 +51,7 @@ void EnemyPool::UpdateAllEnemies(float deltaTime)
         CreateNextEnemy(); // Tạo enemy mới
 
         // Tạo thời gian delay ngẫu nhiên từ 1s đến 4s cho lần tạo enemy tiếp theo
-        float randomDelay = 1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 20.0f));
+        float randomDelay = 1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 5.0f));
         timeSinceLastCreation = -randomDelay; // Đặt thời gian delay ngẫu nhiên
     }
 }

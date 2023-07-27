@@ -99,6 +99,12 @@
     <ClCompile Include="src\GameObject\Projectile.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameStates\GSWin.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSLose.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameObject\BaseObject.h">
@@ -184,6 +190,12 @@
     </ClInclude>
     <ClInclude Include="src\GameObject\Projectile.h">
       <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSWin.h">
+      <Filter>Source Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSLose.h">
+      <Filter>Source Files\GameState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

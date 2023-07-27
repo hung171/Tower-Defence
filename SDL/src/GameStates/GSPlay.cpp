@@ -9,6 +9,7 @@
 #include "GameObject/Turret.h"
 #include "GameObject/EnemyPool.h"
 #include "GameObject/Projectile.h"
+#include "GameStates/GSWin.h"
 #include "iostream"
 
 
@@ -24,6 +25,8 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	m_isWin = false;
+	m_isLose = false;
 	// map
 	p_mapManager = std::make_shared<MapManager>(21, 13, 64, nullptr, SDL_FLIP_NONE);
 	p_mapManager->LoadFromFile("Data/Textures/map01.txt");
@@ -108,6 +111,7 @@ void GSPlay::Init()
 		});
 	p_listButton.push_back(button);
 
+	// button sound
 	texture = ResourceManagers::GetInstance()->GetTexture("button-game/sound-btn.png");
 	std::shared_ptr<MouseButton> btnMusicOn = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
 	btnMusicOn->SetSize(50, 50);
@@ -124,11 +128,10 @@ void GSPlay::Init()
 
 	// Enemy
 
-	const int poolSize = 30; // Số lượng đối thủ ban đầu trong enemyPool
-	p_enemyPool = std::make_shared<EnemyPool>(poolSize, 10.0f); // Chỉ số 1.0f là creationDelay
+	const int poolSize = 40; // Số lượng đối thủ ban đầu trong enemyPool
+	p_enemyPool = std::make_shared<EnemyPool>(poolSize, 5.0f); // Chỉ số 1.0f là creationDelay
 
-	//Camera::GetInstance()->SetTarget(obj);
-
+	//Camera::GetInstance()->SetTarget(obj)
 	p_KeyPress = 0;
 
 	//m_countdown.SetDoration(7000);
@@ -169,22 +172,28 @@ void GSPlay::HandleKeyEvents(SDL_Event& e)
 	}
 
 	// Mouse button click event
-    if (e.type == SDL_MOUSEBUTTONDOWN)
-    {
-        // Lấy thông tin về chuột khi click
-        mouseX = e.button.x;
+
+	if (e.type == SDL_MOUSEBUTTONDOWN)
+	{
+		// Lấy thông tin về chuột khi click
+		mouseX = e.button.x;
 		mouseY = e.button.y;
 
-        // Kiểm tra nếu click chuột trái (SDL_BUTTON_LEFT)
-        if (e.button.button == SDL_BUTTON_LEFT)
-        {
-            // Gọi hàm shoot cho mỗi turret trong danh sách p_listTurret
-            for (auto turret : p_listTurret)
-            {
-                turret->Shoot(mouseX, mouseY, p_listProjectiles);
-            }
-        }
-    }
+		// Kiểm tra nếu click chuột trái (SDL_BUTTON_LEFT)
+		if (e.button.button == SDL_BUTTON_LEFT)
+		{
+			// Gọi hàm shoot cho mỗi turret trong danh sách p_listTurret
+			for (auto turret : p_listTurret)
+			{
+				// Kiểm tra xem turret có sẵn sàng bắn không
+				if (turret->IsReadyToShoot())
+				{
+					turret->Shoot(mouseX, mouseY, p_listProjectiles);
+					turret->ResetShootCooldown();
+				}
+			}
+		}
+	}
 	
 
 	//If a key was pressed
@@ -345,6 +354,18 @@ void GSPlay::Update(float deltaTime)
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);
 	//obj->Update(deltaTime);
+
+	if (!m_isWin && CheckWinCondition())
+	{
+		m_isWin = true;
+		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_WIN);
+	}
+
+	if (!m_isWin && !m_isLose && CheckLoseCondition())
+	{
+		m_isLose = true; // Đánh dấu trạng thái thua
+		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_LOSE);
+	}
 }
 
 void GSPlay::Draw(SDL_Renderer* renderer)
@@ -416,3 +437,41 @@ bool GSPlay::CheckCollision(SDL_Rect a, SDL_Rect b)
 	//If none of the sides from A are outside B
 	return true;
 }
+
+bool GSPlay::CheckWinCondition() const
+{
+	// Kiểm tra điều kiện để thắng (ví dụ: danh sách đối thủ rỗng)
+	return p_enemyPool != nullptr && p_enemyPool->getPool().empty();
+}
+
+bool GSPlay::CheckLoseCondition() const {
+	if (p_enemyPool == nullptr) {
+		return false; // Nếu không có enemy pool thì không thua
+	}
+
+	auto enemyList = p_enemyPool->getPool();
+
+	for (const auto& enemy : enemyList) {
+		if (enemy) {
+			int enemyX = static_cast<int>(enemy->GetPosition().x);
+			int enemyY = static_cast<int>(enemy->GetPosition().y);
+
+			int endPointX = static_cast<int>(p_h_end->GetPosition().x);
+			int endPointY = static_cast<int>(p_h_end->GetPosition().y);
+
+			if (enemyX >= endPointX && enemyX <= endPointX + p_h_end->GetWidth() &&
+				enemyY >= endPointY && enemyY <= endPointY + p_h_end->GetHeight()) {
+				return true; // Nếu có bất kỳ enemy nào đến điểm cuối, thì trả về true (thua)
+			}
+		}
+	}
+
+	return false; // Nếu không có enemy nào đến điểm cuối
+}
+
+
+
+
+
+
+

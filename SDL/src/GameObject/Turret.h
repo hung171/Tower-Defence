@@ -20,8 +20,11 @@ public:
 	float UpdateAngle(float x, float y);
 	bool inRange(float x, float y);
 	void Shoot(float x, float y, std::vector<std::shared_ptr<Projectile>>& projectiles);
+
+	bool IsReadyToShoot() const { return shootCooldown <= 0.0f; }
+	void ResetShootCooldown() { shootCooldown = 1.0f; }
 private:
-	
+	float shootCooldown;
 	std::shared_ptr<Projectile> m_ProjectTile;
 
 	float angle;
