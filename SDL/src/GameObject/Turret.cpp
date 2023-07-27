@@ -39,7 +39,7 @@ float Turret::UpdateAngle(float x, float y)
 	t_x = x;
 	t_y = y;
 	if (inRange(x, y)) {
-		return -10 + atan2(y - (m_position.y + 32), x - (m_position.x + 32)) * 180.0 / M_PI;
+		return atan2(y - (m_position.y + 32), x - (m_position.x + 32)) * 180.0 / M_PI;
 	}
 	return 0;
 }

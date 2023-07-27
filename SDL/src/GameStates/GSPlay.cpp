@@ -124,14 +124,15 @@ void GSPlay::Init()
 
 	// Enemy
 
-	p_enemyPool = std::make_shared<EnemyPool>(30, 10.0f); 
+	p_enemyPool = std::make_shared<EnemyPool>(3, 1.0f); 
 
 	//Camera::GetInstance()->SetTarget(obj);
 
 	p_KeyPress = 0;
 
-	
-
+	//m_countdown.SetDoration(7000);
+	//m_countdown.Start();
+	//float time = 0;
 }
 
 void GSPlay::Exit()
@@ -256,6 +257,8 @@ void GSPlay::HandleMouseMoveEvents(int x, int y)
 
 void GSPlay::Update(float deltaTime)
 {
+	
+	time += deltaTime;
 	switch (p_KeyPress)//Handle Key event
 	{
 	default:
@@ -284,26 +287,29 @@ void GSPlay::Update(float deltaTime)
 	p_enemyPool->UpdateAllEnemies(0.2f);
 	
 	
-
-	/*for (auto enemy : p_enemyPool->getPool()) {
-		SDL_Rect e = {
-			enemy->GetPosition().x,
-			enemy->GetPosition().y,
-			64, 64
-		};
-		for (auto projectile : p_listProjectiles)
-		{
-			SDL_Rect p = {
-			projectile->GetPosition().x,
-			projectile->GetPosition().y,
-			15, 15
+	/*if (m_countdown.GetTicks() > m_countdown.GetDoration()) {*/
+	if (time > 5) {
+		for (auto enemy : p_enemyPool->getPool()) {
+			SDL_Rect e = {
+				enemy->GetPosition().x,
+				enemy->GetPosition().y,
+				64, 64
 			};
+			for (auto projectile : p_listProjectiles)
+			{
+				SDL_Rect p = {
+				projectile->GetPosition().x,
+				projectile->GetPosition().y,
+				15, 15
+				};
 
-			if (CheckCollision(e, p)) {
-				enemy->Destroy();
+				if (CheckCollision(e, p)) {
+					enemy->Destroy();
+				}
 			}
 		}
-	}*/
+	}
+	
 
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);

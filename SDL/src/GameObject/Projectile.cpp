@@ -1,6 +1,6 @@
 ﻿#include "Projectile.h"
 
-const float Projectile::speed = 100.0f, Projectile::size = 0.2f,
+const float Projectile::speed = 1000.0f, Projectile::size = 0.2f,
 Projectile::distanceTraveledMax = 20.0f;
 
 

@@ -2,6 +2,7 @@
 #include "GameStateBase.h"
 #include "GameObject/MouseButton.h"
 #include "Sound.h"
+#include "Timer.h"
 class Sprite2D;
 class SpriteAnimation;
 class MapManager;
@@ -46,6 +47,8 @@ private:
 		p_turret_3,
 		p_turret_4;
 
+	Timer m_countdown;
+
 	//std::shared_ptr<Text>		m_score;
 	std::shared_ptr<Sound>					p_Sound;
 	std::list<std::shared_ptr<MouseButton>>	p_listButton;
@@ -61,4 +64,5 @@ private:
 	float m_Velocity = 10.0f;
 	float p_x, p_y;
 	float mouseX, mouseY;
+	//float time;
 };

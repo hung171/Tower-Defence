@@ -8,6 +8,7 @@ Timer::Timer()
 	mPausedTicks = 0;
 	mStarted = false;
 	mPaused = false;
+	m_timer = 0;
 }
 void Timer::Start()
 {
@@ -53,6 +54,14 @@ void Timer::UnPause()
 		mStartTicks = SDL_GetTicks() - mPausedTicks;
 		mPausedTicks = 0;
 	}
+}
+void Timer::SetDoration(Uint32 time)
+{
+	m_timer = time;
+}
+Uint32 Timer::GetDoration()
+{
+	return m_timer;
 }
 Uint32 Timer::GetTicks()
 {
