@@ -25,4 +25,7 @@ public:
 	// Hàm giải phóng tất cả các enemy đã đi đến điểm cuối
 	void DestroyEnemiesAtEndPoint();
 
+	std::vector<std::shared_ptr<Enemy>> getPool();
+	
+
 };

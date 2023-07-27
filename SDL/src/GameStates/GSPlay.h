@@ -33,6 +33,8 @@ public:
 	int p_KeyPress;
 
 private:
+	bool CheckCollision(SDL_Rect a, SDL_Rect b);
+
 	std::shared_ptr<Sprite2D>	p_background;
 	std::shared_ptr<Sprite2D>	p_h_start;
 	std::shared_ptr<Sprite2D>	p_h_end;
@@ -50,7 +52,7 @@ private:
 	std::list<std::shared_ptr<Sprite2D>>	tileList;
 	std::list<std::shared_ptr<SpriteAnimation>>	p_listAnimation;
 	std::list<std::shared_ptr<Enemy>>	p_listEnemy;
-	std::shared_ptr<Enemy> p_enemy1, p_enemy2, p_enemy3;
+
 	std::shared_ptr<EnemyPool> p_enemyPool;
 	std::shared_ptr<MouseButton> button;
 	std::vector<Vector3> pathPoints;

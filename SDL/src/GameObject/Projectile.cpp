@@ -51,4 +51,22 @@ void Projectile::SetDirection(float x, float y)
 	directionNormal = Vector3(newDirection.x, newDirection.y, 0.0f);
 }
 
+Vector2 Projectile::GetPosition() 
+{
+	return Vector2(m_position.x, m_position.y);
+}
 
+Vector2 Projectile::GetSize() 
+{
+	return Vector2(m_iWidth, m_iHeight);
+}
+
+void Projectile::Destroy()
+{
+	m_isMarkedForDeletion = true;
+}
+
+bool Projectile::IsMarkedForDeletion() 
+{
+	return m_isMarkedForDeletion;
+}

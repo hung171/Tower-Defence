@@ -2,7 +2,7 @@
 #include "CMath.h"
 #include "EnemyPool.h"
 #include <iostream>
-#include "Dot.h"
+#include "Projectile.h"
 
 int tileSize = 64;
 
@@ -108,6 +108,7 @@ void Enemy::Move(float deltaTime)
     }
 }
 
+
 void Enemy::Destroy()
 {
 
@@ -126,20 +127,23 @@ bool Enemy::getIsAlive()
     return isAlive;
 }
 
-Vector2 Enemy::getPos()
+Vector2 Enemy::GetPosition() 
 {
     return Vector2(m_position.x, m_position.y);
 }
 
-void Enemy::SetColliding(bool value) {
-    isColliding = value;
+Vector2 Enemy::GetSize() 
+{
+    return Vector2(m_iWidth, m_iHeight);
 }
 
-bool Enemy::IsColliding() const {
-    return isColliding;
-}
 
-Circle& Enemy::GetCollider() {
-    return mCollider;
-}
+
+
+
+
+
+
+
+
 

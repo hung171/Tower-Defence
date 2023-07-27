@@ -7,9 +7,10 @@
 	#include "TextureManager.h"
 	#include "Timer.h"
 	#include "ResourceManagers.h"
-	#include "Dot.h"	
+	#include "Projectile.h"	
 
 	class TextureManager;
+	class Projectile;
 	class Enemy : public SpriteAnimation {
 		
 	public:
@@ -23,17 +24,17 @@
 		bool		IsDestroyed() const;
 
 		bool		getIsAlive();
-		Vector2		getPos();
-		void SetColliding(bool value);
+		Vector2		GetPosition();
+		Vector2		GetSize();
 
-		bool IsColliding() const;
-		Circle& GetCollider();
+
+
 	private:
 		int currentPathIndex;
 		bool isMoving;
 		bool isDestroyed;
 		bool isColliding;
 		bool isAlive = true;
-		Circle mCollider;
+		bool m_isMarkedForDeletion = false;
 
 	};

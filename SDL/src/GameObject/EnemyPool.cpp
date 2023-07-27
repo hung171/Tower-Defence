@@ -100,6 +100,11 @@ void EnemyPool::DestroyEnemiesAtEndPoint()
     }
 }
 
+std::vector<std::shared_ptr<Enemy>> EnemyPool::getPool()
+{
+    return pool;
+}
+
 void EnemyPool::DestroyEnemy(std::shared_ptr<Enemy> enemy)
 {
     // Xóa đối tượng enemy khỏi danh sách
@@ -108,3 +113,9 @@ void EnemyPool::DestroyEnemy(std::shared_ptr<Enemy> enemy)
         pool.erase(it);
     }
 }
+
+
+
+
+
+

@@ -58,7 +58,7 @@ void Turret::Shoot(float x, float y, std::vector<std::shared_ptr<Projectile>>& p
 	if (inRange(x, y))
 	{
 		pos = Vector3(m_position.x + 32 - 7.5, m_position.y + 32 - 7.5, 0.0f);
-		auto projectile = std::make_shared<Projectile>(pos, Vector3(x, y, 0.0f));
+		std::shared_ptr<Projectile> projectile = std::make_shared<Projectile>(pos, Vector3(x, y, 0.0f));
 		projectile->SetDirection(x, y);
 		projectiles.push_back(projectile);
 	}
