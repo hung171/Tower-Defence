@@ -93,6 +93,12 @@
     <ClCompile Include="src\GameObject\EnemyPool.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameStates\GSCredit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Projectile.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameObject\BaseObject.h">
@@ -171,6 +177,12 @@
       <Filter>Source Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObject\EnemyPool.h">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSCredit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Projectile.h">
       <Filter>Source Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

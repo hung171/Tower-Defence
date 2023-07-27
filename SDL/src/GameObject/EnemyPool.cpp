@@ -76,9 +76,10 @@ void EnemyPool::CreateNextEnemy()
 
     if (enemy != nullptr)
     {
-        enemy->Set2DPosition(64 * 2.5, 64 * 1);
-        enemy->SetSize(64, 64);
-        enemy->SetFlip(SDL_FLIP_NONE);
+        enemy1->Set2DPosition(64 * 2.5, 64 * 3);
+        enemy1->SetSize(64, 64);
+        enemy1->SetFlip(SDL_FLIP_NONE);
+        
     }
 }
 

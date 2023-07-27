@@ -52,6 +52,7 @@ void GSPlay::Init()
 	button->Set2DPosition(64, 64 * 6);
 	button->SetOnLeftClick([this]() {
 		p_turret_1->Set2DPosition(64, 64 * 6);
+		//printf(""
 		});
 	button->SetOnRightClick([this]() {
 		p_turret_1->Set2DPosition(64 * 22, 64 * 14);

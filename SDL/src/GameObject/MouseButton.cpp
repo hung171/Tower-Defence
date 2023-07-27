@@ -33,6 +33,8 @@ bool MouseButton::HandleMouseEvent(SDL_Event* e, Uint8 button)
         {
             // Perform click action
             if (button == SDL_BUTTON_LEFT) {
+                getX = x;
+                getY = y;
                 m_pBtLeftClick();
             }
             else if (button == SDL_BUTTON_RIGHT) {

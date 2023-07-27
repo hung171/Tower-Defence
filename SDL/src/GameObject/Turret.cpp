@@ -7,13 +7,14 @@ Turret::Turret(std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip)
 	: Sprite2D(texture, flip)
 {
 	m_angle = 0.0f;
-	m_position.x = 22 * 64;
-	m_position.y = 9 * 64;
+	m_position.x = 64;;
+	m_position.y = 64 * 6;
 	m_iWidth = 64;
 	m_iHeight = 64;
-	pos = Vector2(m_position.x, m_position.y);
+	pos = m_position;
 	t_x = 0;
 	t_y = 0;
+	m_ProjectTile = std::make_shared<Projectile>(Get2DPosition(), Vector3(t_x, t_y, 0.0f));
 }
 
 void Turret::Draw(SDL_Renderer* renderer)
@@ -22,6 +23,7 @@ void Turret::Draw(SDL_Renderer* renderer)
 	{
 		m_pTexture->Render(m_position.x, m_position.y, m_iWidth, m_iHeight, m_angle);
 	}
+	m_ProjectTile->Draw(renderer);
 }
 
 void Turret::Update(float deltatime)
@@ -30,8 +32,10 @@ void Turret::Update(float deltatime)
 
 	//Uint32 mouseState = SDL_GetMouseState(&x, &y);
 	SetRotation(UpdateAngle(t_x, t_y));
-	
+	//shootProjectile(listProjectiles);
 	//Sprite2D::Update(deltatime);
+	m_ProjectTile->SetDirection(t_x, t_y);
+	m_ProjectTile->Update(deltatime);
 }
 
 float Turret::UpdateAngle(float x, float y)
@@ -52,6 +56,13 @@ bool Turret::inRange(float x, float y)
 	}
 	return true;
 }
+//
+//void Turret::shootProjectile(std::vector<Projectile>& listProjectiles) {
+//	//Shoot a projectile towards the target unit if the weapon timer is ready.
+//	listProjectiles.push_back(Projectile(pos, UpdateAngle(t_x, t_y)));
+//
+//}
+//
 
 
 

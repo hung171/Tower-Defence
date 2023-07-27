@@ -5,6 +5,9 @@
 #include "TextureManager.h"
 #include "Timer.h"
 #include "Enemy.h"
+#include "Projectile.h"
+
+class Projectile;
 
 
 
@@ -15,15 +18,17 @@ public:
 	void Draw(SDL_Renderer* renderer);
 	void Update(float deltatime) override;
 	float UpdateAngle(float x, float y);
-
 	bool inRange(float x, float y);
 
 private:
+	void shootProjectile(std::vector<Projectile>& listProjectiles);
+	std::shared_ptr<Projectile> m_ProjectTile;
+
 	float angle;
 	static const float speedAngular, weaponRange;
 	std::weak_ptr<Enemy> enemyTarget;
-
-	Vector2 pos;
+	Vector3 pos;
+	std::vector<Projectile> m_pro;
 	float t_x, t_y;
 };
 

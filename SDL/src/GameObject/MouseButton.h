@@ -19,9 +19,12 @@ public:
 	
 	void	SetOnLeftClick(std::function<void(void)>pBtLeftClick);
 	void	SetOnRightClick(std::function<void(void)>pBtRightClick);
+	int getX;
+	int getY;
 private:
 	std::function<void(void)>m_pBtLeftClick;
 	std::function<void(void)>m_pBtRightClick;
+	
 	//Top left position
 	//SDL_Point* mPosition;
 	//Currently used global sprite
