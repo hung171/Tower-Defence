@@ -1,4 +1,4 @@
-#include "Projectile.h"
+﻿#include "Projectile.h"
 
 const float Projectile::speed = 100.0f, Projectile::size = 0.2f,
 Projectile::distanceTraveledMax = 20.0f;
@@ -22,16 +22,6 @@ void Projectile::Draw(SDL_Renderer* renderer)
 	}
 }
 
-void Projectile::Update(float deltatime)
-{
-	float distanceMove = speed * deltatime;
-	m_position += directionNormal * distanceMove;
-
-	distanceTraveled += distanceMove;
-	if (distanceTraveled >= distanceTraveledMax)
-		collisionOccurred = true;;
-}
-
 void normalize_1(Vector3& vector)
 {
 	float lengthSquared = vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
@@ -44,6 +34,15 @@ void normalize_1(Vector3& vector)
 
 	}
 }
+
+void Projectile::Update(float deltatime)
+{
+	// Cập nhật vị trí của đạn
+	m_position += directionNormal * speed * deltatime;
+
+
+}
+
 
 void Projectile::SetDirection(float x, float y)
 {

@@ -8,6 +8,7 @@ class MapManager;
 class Enemy;
 class Turret;
 class EnemyPool;
+class Projectile;
 
 class GSPlay :
 	public GameStateBase
@@ -53,7 +54,9 @@ private:
 	std::shared_ptr<EnemyPool> p_enemyPool;
 	std::shared_ptr<MouseButton> button;
 	std::vector<Vector3> pathPoints;
+	std::vector<std::shared_ptr<Projectile>> p_listProjectiles;
 	float time = 0.0f;
 	float m_Velocity = 10.0f;
 	float p_x, p_y;
+	float mouseX, mouseY;
 };

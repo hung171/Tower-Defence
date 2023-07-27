@@ -123,12 +123,9 @@ void GSPlay::Init()
 
 	// Enemy
 
-	p_enemyPool = std::make_shared<EnemyPool>(30, 10.0f); // 3 đối thủ trong pool
+	p_enemyPool = std::make_shared<EnemyPool>(30, 10.0f); 
 
 	//Camera::GetInstance()->SetTarget(obj);
-
-	
-	
 
 	p_KeyPress = 0;
 }
@@ -164,6 +161,24 @@ void GSPlay::HandleKeyEvents(SDL_Event& e)
 		p_x = e.motion.x;
 		p_y = e.motion.y;
 	}
+
+	// Mouse button click event
+    if (e.type == SDL_MOUSEBUTTONDOWN)
+    {
+        // Lấy thông tin về chuột khi click
+        mouseX = e.button.x;
+		mouseY = e.button.y;
+
+        // Kiểm tra nếu click chuột trái (SDL_BUTTON_LEFT)
+        if (e.button.button == SDL_BUTTON_LEFT)
+        {
+            // Gọi hàm shoot cho mỗi turret trong danh sách p_listTurret
+            for (auto turret : p_listTurret)
+            {
+                turret->Shoot(mouseX, mouseY, p_listProjectiles);
+            }
+        }
+    }
 	
 
 	//If a key was pressed
@@ -233,6 +248,8 @@ void GSPlay::HandleMouseMoveEvents(int x, int y)
 
 }
 
+
+
 void GSPlay::Update(float deltaTime)
 {
 	switch (p_KeyPress)//Handle Key event
@@ -250,10 +267,18 @@ void GSPlay::Update(float deltaTime)
 	{
 		it->UpdateAngle(p_x, p_y);
 		it->Update(deltaTime);
+		
+	}
+
+	for (auto projectile : p_listProjectiles)
+	{
+		projectile->Update(deltaTime);
 	}
 	//std::cout << m_x << " " << m_y << std::endl;
 
 	p_enemyPool->UpdateAllEnemies(0.2f);
+
+
 
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);
@@ -277,6 +302,10 @@ void GSPlay::Draw(SDL_Renderer* renderer)
 		it->Draw(renderer);
 	}
 
+	for (auto projectile : p_listProjectiles)
+	{
+		projectile->Draw(renderer);
+	}
 
 	p_enemyPool->DrawAllEnemies(renderer);
 }

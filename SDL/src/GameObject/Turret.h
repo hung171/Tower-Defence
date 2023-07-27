@@ -19,9 +19,9 @@ public:
 	void Update(float deltatime) override;
 	float UpdateAngle(float x, float y);
 	bool inRange(float x, float y);
-
+	void Shoot(float x, float y, std::vector<std::shared_ptr<Projectile>>& projectiles);
 private:
-	void shootProjectile(std::vector<Projectile>& listProjectiles);
+	
 	std::shared_ptr<Projectile> m_ProjectTile;
 
 	float angle;
