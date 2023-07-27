@@ -14,7 +14,8 @@
 	class Enemy : public SpriteAnimation {
 		
 	public:
-		Enemy(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float  frameTime);
+		Enemy(std::shared_ptr<TextureManager> texture, int spriteRow, 
+			int end, int frameCount, int numAction, float  frameTime);
 		~Enemy();
 
 		void		Init() override;

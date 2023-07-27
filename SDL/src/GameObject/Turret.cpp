@@ -1,6 +1,5 @@
 ﻿#include "Turret.h"
-
-//const float Turret::speedAngular = MathAddon::angleDegToRad(180.0f), Turret::weaponRange = 3.0f;
+#include<iostream>
 
 Turret::Turret(std::shared_ptr<TextureManager> texture, SDL_RendererFlip flip)
 	: Sprite2D(texture, flip)
@@ -62,12 +61,7 @@ void Turret::Shoot(float x, float y, std::vector<std::shared_ptr<Projectile>>& p
 		projectile->SetDirection(x, y);
 		projectiles.push_back(projectile);
 	}
-
 }
 
 
 
-
-
-
-  

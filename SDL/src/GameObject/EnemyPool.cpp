@@ -11,6 +11,7 @@ EnemyPool::EnemyPool(int poolSize, float creationDelay)
 {
     // Khởi tạo pool với các đối thủ null (nullptr)
     pool.resize(poolSize, nullptr);
+    
 }
 
 std::shared_ptr<Enemy> EnemyPool::CreateEnemy(std::shared_ptr<TextureManager> texture, int spriteRow, int end, int frameCount, int numAction, float frameTime)
@@ -30,21 +31,11 @@ std::shared_ptr<Enemy> EnemyPool::CreateEnemy(std::shared_ptr<TextureManager> te
 
 void EnemyPool::UpdateAllEnemies(float deltaTime)
 {
-    for (int i = 0; i < poolSize;i++) {
-        CreateNextEnemy();
-    }
-    timeSinceLastCreation += deltaTime;
     // Cập nhật tất cả các đối thủ trong pool
     for (const auto& enemy : pool) {
-
-        if (enemy != nullptr && timeSinceLastCreation >= creationDelay) {
-            
-         
+        if (enemy != nullptr) {
             enemy->Update(deltaTime);
             enemy->Move(deltaTime); // Di chuyển tất cả các enemy trong pool
-            timeSinceLastCreation = 0;
-
-
 
 
             // Kiểm tra nếu enemy đã bị hủy (đến điểm cuối) thì xóa nó khỏi danh sách
@@ -55,14 +46,14 @@ void EnemyPool::UpdateAllEnemies(float deltaTime)
     }
 
     // Tạo enemy mới sau mỗi (creationDelay) giây
-    
-    //if (timeSinceLastCreation >= creationDelay) {
-    //    ; // Tạo enemy mới
+    timeSinceLastCreation += deltaTime;
+    if (timeSinceLastCreation >= creationDelay) {
+        CreateNextEnemy(); // Tạo enemy mới
 
-    //    // Tạo thời gian delay ngẫu nhiên từ 1s đến 4s cho lần tạo enemy tiếp theo
-    //    float randomDelay = 1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 20.0f));
-    //    timeSinceLastCreation = -randomDelay; // Đặt thời gian delay ngẫu nhiên
-    //}
+        // Tạo thời gian delay ngẫu nhiên từ 1s đến 4s cho lần tạo enemy tiếp theo
+        float randomDelay = 1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 20.0f));
+        timeSinceLastCreation = -randomDelay; // Đặt thời gian delay ngẫu nhiên
+    }
 }
 
 void EnemyPool::DrawAllEnemies(SDL_Renderer* renderer)

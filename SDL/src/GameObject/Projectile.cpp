@@ -1,7 +1,7 @@
 ﻿#include "Projectile.h"
+#include <iostream>
 
-const float Projectile::speed = 1000.0f, Projectile::size = 0.2f,
-Projectile::distanceTraveledMax = 20.0f;
+const float Projectile::speed = 300.0f;
 
 
 Projectile::Projectile(Vector3 setPos, Vector3 setDirectionNormal)
@@ -11,7 +11,9 @@ Projectile::Projectile(Vector3 setPos, Vector3 setDirectionNormal)
 	directionNormal = setDirectionNormal;
 	m_pTexture = ResourceManagers::GetInstance()->GetTexture("Turret/Projectile.png");
 	m_iWidth = 15;
-	m_iHeight =15;
+	m_iHeight = 15;
+	m_isMarkedForDeletion = false;
+	maxdistance = 200.0f;
 }
 
 void Projectile::Draw(SDL_Renderer* renderer)
@@ -40,8 +42,16 @@ void Projectile::Update(float deltatime)
 	// Cập nhật vị trí của đạn
 	m_position += directionNormal * speed * deltatime;
 
-
+	// Tính toán khoảng cách đã bay của đạn
+	distanceTraveled += speed * deltatime;
+	std::cout << distanceTraveled;
+	// Kiểm tra xem đạn đã bay quá maxdistance chưa
+	if (distanceTraveled >= maxdistance)
+	{
+		Destroy(); // Gọi hàm Destroy để đánh dấu đạn cần bị xóa
+	}
 }
+
 
 
 void Projectile::SetDirection(float x, float y)
@@ -51,12 +61,12 @@ void Projectile::SetDirection(float x, float y)
 	directionNormal = Vector3(newDirection.x, newDirection.y, 0.0f);
 }
 
-Vector2 Projectile::GetPosition() 
+Vector2 Projectile::GetPosition()
 {
 	return Vector2(m_position.x, m_position.y);
 }
 
-Vector2 Projectile::GetSize() 
+Vector2 Projectile::GetSize()
 {
 	return Vector2(m_iWidth, m_iHeight);
 }
@@ -64,9 +74,12 @@ Vector2 Projectile::GetSize()
 void Projectile::Destroy()
 {
 	m_isMarkedForDeletion = true;
+	maxdistance = 0.0f; // Reset giá trị distanceTraveled khi đạn bị xoá
 }
 
-bool Projectile::IsMarkedForDeletion() 
+
+bool Projectile::IsMarkedForDeletion()
 {
 	return m_isMarkedForDeletion;
 }
+

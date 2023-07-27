@@ -124,7 +124,8 @@ void GSPlay::Init()
 
 	// Enemy
 
-	p_enemyPool = std::make_shared<EnemyPool>(3, 1.0f); 
+	const int poolSize = 30; // Số lượng đối thủ ban đầu trong enemyPool
+	p_enemyPool = std::make_shared<EnemyPool>(poolSize, 10.0f); // Chỉ số 1.0f là creationDelay
 
 	//Camera::GetInstance()->SetTarget(obj);
 
@@ -258,7 +259,7 @@ void GSPlay::HandleMouseMoveEvents(int x, int y)
 void GSPlay::Update(float deltaTime)
 {
 	
-	time += deltaTime;
+	
 	switch (p_KeyPress)//Handle Key event
 	{
 	default:
@@ -282,34 +283,64 @@ void GSPlay::Update(float deltaTime)
 		projectile->Update(deltaTime);
 
 	}
-	//std::cout << m_x << " " << m_y << std::endl;
 
 	p_enemyPool->UpdateAllEnemies(0.2f);
 	
 	
-	/*if (m_countdown.GetTicks() > m_countdown.GetDoration()) {*/
-	if (time > 5) {
-		for (auto enemy : p_enemyPool->getPool()) {
-			SDL_Rect e = {
-				enemy->GetPosition().x,
-				enemy->GetPosition().y,
-				64, 64
-			};
-			for (auto projectile : p_listProjectiles)
-			{
-				SDL_Rect p = {
-				projectile->GetPosition().x,
-				projectile->GetPosition().y,
-				15, 15
+	
+	if (p_enemyPool != nullptr) {
+		auto enemyList = p_enemyPool->getPool();
+		for (auto it = enemyList.begin(); it != enemyList.end();)
+		{
+			auto enemy = *it;
+			if (enemy != nullptr) {
+				SDL_Rect e = {
+					enemy->GetPosition().x,
+					enemy->GetPosition().y,
+					64, 64
 				};
 
-				if (CheckCollision(e, p)) {
-					enemy->Destroy();
+				bool destroyed = false;
+				for (auto itProjectile = p_listProjectiles.begin(); itProjectile != p_listProjectiles.end();)
+				{
+					auto projectile = *itProjectile;
+					SDL_Rect p = {
+						projectile->GetPosition().x,
+						projectile->GetPosition().y,
+						15, 15
+					};
+
+					if (CheckCollision(e, p)) {
+						enemy->Destroy();
+						itProjectile = p_listProjectiles.erase(itProjectile); // Xoá projectile nếu va chạm
+						destroyed = true;
+					}
+					else {
+						++itProjectile;
+					}
 				}
+
+				if (!destroyed) {
+					++it;
+				}
+				else {
+					// Xoá enemy nếu nó bị va chạm
+					it = enemyList.erase(it);
+				}
+			}
+			else {
+				++it;
 			}
 		}
 	}
-	
+
+	p_listProjectiles.erase(
+		std::remove_if(p_listProjectiles.begin(), p_listProjectiles.end(),
+			[](const std::shared_ptr<Projectile>& projectile) {
+				return projectile->IsMarkedForDeletion();
+			}),
+		p_listProjectiles.end());
+
 
 	//Update position of camera
 	//Camera::GetInstance()->Update(deltaTime);

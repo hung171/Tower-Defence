@@ -34,17 +34,6 @@ void GSMenu::Init()
 	m_listButton.push_back(btnPlay);
 
 
-	//Option game
-	/*texture = ResourceManagers::GetInstance()->GetTexture("button-game/option-btn.png");
-	std::shared_ptr<MouseButton> btnOption = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
-	btnOption->SetSize(280, 120);
-	btnOption->Set2DPosition(SCREEN_WIDTH / 3 + 100, SCREEN_HEIDHT / 2 + 160);
-	btnOption->SetOnLeftClick([]() {
-		GameStateMachine::GetInstance()->PushState(StateType::STATE_OPTION);
-		});
-	m_listButton.push_back(btnOption);*/
-
-
 	// exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("button-game/close-btn.png");
 	std::shared_ptr<MouseButton> btnClose = std::make_shared<MouseButton>(texture, SDL_FLIP_NONE);
