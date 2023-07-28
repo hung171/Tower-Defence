@@ -75,5 +75,5 @@ private:
 	bool m_isWin;
 	bool m_isLose;
 	float shootCooldown;
-	
+	int count = 0;
 };

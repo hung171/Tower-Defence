@@ -1,4 +1,5 @@
 #include "GSLose.h"
+#include "iostream"
 
 GSLose::GSLose() : GameStateBase(StateType::STATE_LOSE),
 m_background(nullptr), m_textGameName(nullptr)
@@ -14,7 +15,7 @@ GSLose::~GSLose()
 
 void GSLose::Init()
 {
-
+	//std::cout << "lose";
 	//auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("mybackground.jpg");
 
@@ -24,10 +25,10 @@ void GSLose::Init()
 	m_background->Set2DPosition(0, 0);
 
 	// m_background2
-	texture = ResourceManagers::GetInstance()->GetTexture("lose.jpg");
+	texture = ResourceManagers::GetInstance()->GetTexture("youLose.png");
 	m_background2 = std::make_shared<Sprite2D>(texture, SDL_FLIP_NONE);
-	m_background2->SetSize(SCREEN_WIDTH / 1.25, SCREEN_HEIDHT / 1.25);
-	m_background2->Set2DPosition(SCREEN_WIDTH / 2 - SCREEN_WIDTH / 2.5, SCREEN_HEIDHT / 2 - SCREEN_HEIDHT / 2.5);
+	m_background2->SetSize(SCREEN_WIDTH / 2, SCREEN_HEIDHT / 3);
+	m_background2->Set2DPosition(SCREEN_WIDTH / 4, SCREEN_HEIDHT / 4);
 
 
 	// button close

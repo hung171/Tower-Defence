@@ -129,7 +129,7 @@ void GSPlay::Init()
 	// Enemy
 
 	const int poolSize = 40; // Số lượng đối thủ ban đầu trong enemyPool
-	p_enemyPool = std::make_shared<EnemyPool>(poolSize, 5.0f); // Chỉ số 1.0f là creationDelay
+	p_enemyPool = std::make_shared<EnemyPool>(poolSize, 1.0f); // Chỉ số 1.0f là creationDelay
 
 	//Camera::GetInstance()->SetTarget(obj)
 	p_KeyPress = 0;
@@ -295,7 +295,7 @@ void GSPlay::Update(float deltaTime)
 
 	p_enemyPool->UpdateAllEnemies(0.2f);
 	
-	
+	//int count = 0;
 	
 	if (p_enemyPool != nullptr) {
 		auto enemyList = p_enemyPool->getPool();
@@ -335,6 +335,8 @@ void GSPlay::Update(float deltaTime)
 				else {
 					// Xoá enemy nếu nó bị va chạm
 					it = enemyList.erase(it);
+					count++;
+					std::cout << count << std::endl;
 				}
 			}
 			else {
@@ -355,15 +357,17 @@ void GSPlay::Update(float deltaTime)
 	//Camera::GetInstance()->Update(deltaTime);
 	//obj->Update(deltaTime);
 
-	if (!m_isWin && CheckWinCondition())
+	if (count == 25)
 	{
-		m_isWin = true;
+		//m_isWin = true;
+		std::cout << "win";
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_WIN);
+		m_isLose = true;
 	}
 
-	if (!m_isWin && !m_isLose && CheckLoseCondition())
+	if (CheckLoseCondition())
 	{
-		m_isLose = true; // Đánh dấu trạng thái thua
+		//m_isLose = true; // Đánh dấu trạng thái thua
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_LOSE);
 	}
 }
@@ -441,7 +445,9 @@ bool GSPlay::CheckCollision(SDL_Rect a, SDL_Rect b)
 bool GSPlay::CheckWinCondition() const
 {
 	// Kiểm tra điều kiện để thắng (ví dụ: danh sách đối thủ rỗng)
-	return p_enemyPool != nullptr && p_enemyPool->getPool().empty();
+	//return p_enemyPool->getPool().empty();
+	//p_enemyPool != nullptr;
+	return false;
 }
 
 bool GSPlay::CheckLoseCondition() const {

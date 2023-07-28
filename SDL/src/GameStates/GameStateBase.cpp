@@ -35,9 +35,11 @@ std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateType stt)
 	case StateType::STATE_WIN:
 		gs = std::make_shared<GSWin>();
 		//GSWIN
+		break;
 	case StateType::STATE_LOSE:
 		gs = std::make_shared<GSLose>();
 		//GSPLOSE
+		break;
 	default:
 		break;
 	}
