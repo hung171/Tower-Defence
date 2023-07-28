@@ -1,48 +1,254 @@
 ﻿  Game.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\game.cpp(103): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\Game.cpp(112,27): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
   ResourceManagers.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Camera.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\camera.cpp(23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\camera.cpp(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\camera.cpp(43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Camera.cpp(23,47): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Camera.cpp(24,47): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Camera.cpp(43,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Camera.cpp(43,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   CMath.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Dot.cpp
+  Enemy.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(60,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(60,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(61,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(61,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(62,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(62,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(63,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(63,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(64,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(64,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(65,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(65,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(66,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(66,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(67,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(67,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(68,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(68,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(69,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(69,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(70,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(70,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(71,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(71,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(72,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(72,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(137,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Enemy.cpp(137,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  EnemyPool.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\EnemyPool.cpp(23,36): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  MapManager.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MapManager.cpp(56,22): warning C4566: character represented by universal-character-name '\u1EC3' cannot be represented in the current code page (1252)
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MapManager.cpp(56,22): warning C4566: character represented by universal-character-name '\u1EDF' cannot be represented in the current code page (1252)
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MapManager.cpp(56,22): warning C4566: character represented by universal-character-name '\u1EC7' cannot be represented in the current code page (1252)
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MapManager.cpp(96,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MapManager.cpp(96,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   MouseButton.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\mousebutton.cpp(45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MouseButton.cpp(53,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\MouseButton.cpp(53,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Projectile.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Projectile.cpp(23,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Projectile.cpp(23,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Projectile.cpp(70,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Projectile.cpp(70,17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Renderer.cpp
   Sound.cpp
   Sprite2D.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\sprite2d.cpp(26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Sprite2D.cpp(26,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Sprite2D.cpp(26,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SpriteAnimation.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\spriteanimation.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\SpriteAnimation.cpp(33,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\SpriteAnimation.cpp(33,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Text.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\text.cpp(34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Text.cpp(34,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Text.cpp(34,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   TextureManager.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(89): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(89): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(95): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(96): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(97): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(97): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(98): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gameobject\texturemanager.cpp(98): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(89,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(89,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(89,69): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(89,69): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(95,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(96,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,58): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,71): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,71): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,81): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(97,81): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(98,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(98,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(98,69): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(98,69): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(104,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(105,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,58): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,71): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,71): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,81): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(106,81): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(107,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(107,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(107,69): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\TextureManager.cpp(107,69): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Timer.cpp
+  Turret.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(22,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(22,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(46,74): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(53,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(64,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\Turret.cpp(64,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   GameStateBase.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   GameStateMachine.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Compiling...
+  GSCredit.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSCredit.cpp(31,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSCredit.cpp(31,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSCredit.cpp(32,88): warning C4305: 'argument': truncation from 'double' to 'float'
   GSIntro.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  GSLose.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   GSMenu.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsmenu.cpp(31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsmenu.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsmenu.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsmenu.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsmenu.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   GSPlay.cpp
-e:\trainer\sdl2\sdl2project\trainingframework\sdl\src\gamestates\gsplay.cpp(144): warning C4065: switch statement contains 'default' but no 'case' labels
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(170,17): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(171,17): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(179,20): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(180,20): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(307,26): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(307,26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(308,26): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(308,26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(317,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(317,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(318,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(318,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameStates\GSPlay.cpp(276,2): warning C4065: switch statement contains 'default' but no 'case' labels
+  GSWin.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   main.cpp
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(34,47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(53,33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(54,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\SDL\src\GameObject\CMath.h(58,57): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Generating code
-  1202 of 1206 functions (99.7%) were compiled, the rest were copied from previous compilation.
-    126 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 2192 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  SDL.vcxproj -> E:\TRainer\SDL2\SDL2Project\TrainingFramework\x64\Release\SDL.exe
+  SDL.vcxproj -> C:\Users\han.glschool\source\repos\Thuan-Hung-Dung\x64\Release\SDL.exe
   0 File(s) copied
